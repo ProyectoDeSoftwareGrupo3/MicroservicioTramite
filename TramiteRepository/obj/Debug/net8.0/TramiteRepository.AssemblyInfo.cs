@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TramiteRepository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfe0fa16f9061fc40c5453b35c5620cc37e3f088")]
 [assembly: System.Reflection.AssemblyProductAttribute("TramiteRepository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TramiteRepository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

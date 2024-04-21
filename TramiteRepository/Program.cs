@@ -1,7 +1,11 @@
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using TramiteRepository.Data;
 //PROBANDO PUSH
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<TramiteRepositoryContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TramiteRepositoryContext") ?? throw new InvalidOperationException("Connection string 'TramiteRepositoryContext' not found.")));
 
 // Add services to the container.
 
