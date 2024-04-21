@@ -1,11 +1,11 @@
+using Application.Interfaces;
+using Application.UseCases;
 using Infrastructure.Persistence;
+using Infrastructure.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using TramiteRepository.Data;
-//PROBANDO PUSH
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<TramiteRepositoryContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TramiteRepositoryContext") ?? throw new InvalidOperationException("Connection string 'TramiteRepositoryContext' not found.")));
 
 // Add services to the container.
 
@@ -14,9 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
 var connectionString = builder.Configuration["ConnectionString"];
 
 builder.Services.AddDbContext<TramiteDbContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<ITramiteEstadoQuery, TramiteEstadoQuery>();
+builder.Services.AddScoped<ITramiteEstadoService, TramiteEstadoService>();
 
 var app = builder.Build();
 
