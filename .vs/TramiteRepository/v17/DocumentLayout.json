@@ -3,24 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\usecases\\tramiteestadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\usecases\\tramiteestadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\tramiterepository\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|solutionrelative:tramiterepository\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\infrastructure\\migrations\\20240421193441_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240421193441_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\tramiterepository\\controllers\\tramitestiposcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|solutionrelative:tramiterepository\\controllers\\tramitestiposcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\tramiterepository\\controllers\\tramiteestadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|solutionrelative:tramiterepository\\controllers\\tramiteestadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\tramiterepository\\controllers\\tramitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|solutionrelative:tramiterepository\\controllers\\tramitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\tramiterepository\\controllers\\tramitescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|solutionrelative:tramiterepository\\controllers\\tramitescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\response\\getalltramiteestadoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\response\\getalltramiteestadoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{419A4DA8-43F0-4464-A6B2-2AAF709CA57E}|Domain\\Domain.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\domain\\entities\\tramitetipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{419A4DA8-43F0-4464-A6B2-2AAF709CA57E}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\tramitetipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\tramiterepository\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|solutionrelative:tramiterepository\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\infrastructure\\query\\tramitetipoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\query\\tramitetipoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\infrastructure\\query\\tramiteestadoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\query\\tramiteestadoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\usecases\\tramitetiposervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\usecases\\tramitetiposervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\interfaces\\itramiteestadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itramiteestadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\usecases\\tramiteestadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\usecases\\tramiteestadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\response\\getalltramitetiporesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\response\\getalltramitetiporesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\interfaces\\itramitetiposervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itramitetiposervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\interfaces\\itramitetipoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itramitetipoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\interfaces\\itramiteestadoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itramiteestadoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\infrastructure\\migrations\\20240421193441_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240421193441_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\infrastructure\\persistence\\tramitedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,32 +79,12 @@
       "RelativeMoniker": "D:0:0:{5E1D20CE-3E8F-4DB6-9797-22EA10C0A809}|TramiteRepository\\TramiteRepository.csproj|solutionrelative:tramiterepository\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\interfaces\\itramiteestadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itramiteestadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\response\\getalltramiteestadoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\response\\getalltramiteestadoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\application\\interfaces\\itramiteestadoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FB27685-6CA1-4C3B-BE4E-C3875C6E362C}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itramiteestadoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\infrastructure\\query\\tramiteestadoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{487388F7-1E94-483C-BC58-515E7945BE54}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\query\\tramiteestadoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{419A4DA8-43F0-4464-A6B2-2AAF709CA57E}|Domain\\Domain.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\domain\\entities\\tramite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{419A4DA8-43F0-4464-A6B2-2AAF709CA57E}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\tramite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{419A4DA8-43F0-4464-A6B2-2AAF709CA57E}|Domain\\Domain.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\domain\\entities\\tramiteestado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{419A4DA8-43F0-4464-A6B2-2AAF709CA57E}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\tramiteestado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{419A4DA8-43F0-4464-A6B2-2AAF709CA57E}|Domain\\Domain.csproj|c:\\users\\lucia\\desktop\\p.sof\\microserviciotramite\\domain\\entities\\tramitetipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{419A4DA8-43F0-4464-A6B2-2AAF709CA57E}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\tramitetipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,90 +130,51 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TramitesTiposController.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Controllers\\TramitesTiposController.cs",
+              "RelativeDocumentMoniker": "TramiteRepository\\Controllers\\TramitesTiposController.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Controllers\\TramitesTiposController.cs*",
+              "RelativeToolTip": "TramiteRepository\\Controllers\\TramitesTiposController.cs*",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:37:42.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Program.cs",
-              "RelativeDocumentMoniker": "TramiteRepository\\Program.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Program.cs",
-              "RelativeToolTip": "TramiteRepository\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T21:38:00.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TramiteDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Persistence\\TramiteDbContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\TramiteDbContext.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Persistence\\TramiteDbContext.cs",
-              "RelativeToolTip": "Infrastructure\\Persistence\\TramiteDbContext.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAcwA0AAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T22:22:57.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "TramiteEstadosController.cs",
               "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Controllers\\TramiteEstadosController.cs",
               "RelativeDocumentMoniker": "TramiteRepository\\Controllers\\TramiteEstadosController.cs",
               "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Controllers\\TramiteEstadosController.cs",
               "RelativeToolTip": "TramiteRepository\\Controllers\\TramiteEstadosController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAIwBIAAABAAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAUwA4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T19:06:18.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TramiteEstadoService.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\UseCases\\TramiteEstadoService.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\TramiteEstadoService.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\UseCases\\TramiteEstadoService.cs",
-              "RelativeToolTip": "Application\\UseCases\\TramiteEstadoService.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAcwCAAAAApAAAA",
+              "DocumentIndex": 3,
+              "Title": "GetAllTramiteEstadoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Response\\GetAllTramiteEstadoResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Response\\GetAllTramiteEstadoResponse.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Response\\GetAllTramiteEstadoResponse.cs",
+              "RelativeToolTip": "Application\\Response\\GetAllTramiteEstadoResponse.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAIwAsAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T18:51:26.576Z",
+              "WhenOpened": "2024-04-21T18:45:20.804Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "20240421193441_Inicial.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Migrations\\20240421193441_Inicial.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240421193441_Inicial.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Migrations\\20240421193441_Inicial.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240421193441_Inicial.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T19:34:42.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\appsettings.json",
-              "RelativeDocumentMoniker": "TramiteRepository\\appsettings.json",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\appsettings.json",
-              "RelativeToolTip": "TramiteRepository\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-19T22:14:31.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TramiteController.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Controllers\\TramiteController.cs",
-              "RelativeDocumentMoniker": "TramiteRepository\\Controllers\\TramiteController.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Controllers\\TramiteController.cs",
-              "RelativeToolTip": "TramiteRepository\\Controllers\\TramiteController.cs",
+              "Title": "TramitesController.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Controllers\\TramitesController.cs",
+              "RelativeDocumentMoniker": "TramiteRepository\\Controllers\\TramitesController.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Controllers\\TramitesController.cs",
+              "RelativeToolTip": "TramiteRepository\\Controllers\\TramitesController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T18:25:50.485Z",
@@ -197,7 +182,186 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TramiteTipo.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Domain\\Entities\\TramiteTipo.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\TramiteTipo.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Domain\\Entities\\TramiteTipo.cs",
+              "RelativeToolTip": "Domain\\Entities\\TramiteTipo.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAIwAsAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T21:49:28.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Program.cs",
+              "RelativeDocumentMoniker": "TramiteRepository\\Program.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\Program.cs",
+              "RelativeToolTip": "TramiteRepository\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T21:38:00.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TramiteTipoQuery.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Query\\TramiteTipoQuery.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Query\\TramiteTipoQuery.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Query\\TramiteTipoQuery.cs",
+              "RelativeToolTip": "Infrastructure\\Query\\TramiteTipoQuery.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAcwBUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:55:49.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "TramiteEstadoQuery.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Query\\TramiteEstadoQuery.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Query\\TramiteEstadoQuery.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Query\\TramiteEstadoQuery.cs",
+              "RelativeToolTip": "Infrastructure\\Query\\TramiteEstadoQuery.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwBwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:32:22.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TramiteTipoService.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\UseCases\\TramiteTipoService.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\TramiteTipoService.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\UseCases\\TramiteTipoService.cs",
+              "RelativeToolTip": "Application\\UseCases\\TramiteTipoService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:43:52.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ITramiteEstadoService.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteEstadoService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ITramiteEstadoService.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteEstadoService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ITramiteEstadoService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:41:35.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TramiteEstadoService.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\UseCases\\TramiteEstadoService.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\TramiteEstadoService.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\UseCases\\TramiteEstadoService.cs",
+              "RelativeToolTip": "Application\\UseCases\\TramiteEstadoService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:51:26.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetAllTramiteTipoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Response\\GetAllTramiteTipoResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Response\\GetAllTramiteTipoResponse.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Response\\GetAllTramiteTipoResponse.cs",
+              "RelativeToolTip": "Application\\Response\\GetAllTramiteTipoResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:34:26.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ITramiteTipoService.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteTipoService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ITramiteTipoService.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteTipoService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ITramiteTipoService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:32:09.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ITramiteTipoQuery.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteTipoQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ITramiteTipoQuery.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteTipoQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ITramiteTipoQuery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:29:23.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ITramiteEstadoQuery.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteEstadoQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ITramiteEstadoQuery.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteEstadoQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ITramiteEstadoQuery.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:29:36.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TramiteDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Persistence\\TramiteDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\TramiteDbContext.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Persistence\\TramiteDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\TramiteDbContext.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAcwA0AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T22:22:57.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20240421193441_Inicial.cs",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Migrations\\20240421193441_Inicial.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240421193441_Inicial.cs",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Migrations\\20240421193441_Inicial.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240421193441_Inicial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T19:34:42.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\appsettings.json",
+              "RelativeDocumentMoniker": "TramiteRepository\\appsettings.json",
+              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\appsettings.json",
+              "RelativeToolTip": "TramiteRepository\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-19T22:14:31.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\TramiteRepository\\appsettings.Development.json",
               "RelativeDocumentMoniker": "TramiteRepository\\appsettings.Development.json",
@@ -205,64 +369,11 @@
               "RelativeToolTip": "TramiteRepository\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-19T22:21:43.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-19T22:21:43.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ITramiteEstadoService.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteEstadoService.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\ITramiteEstadoService.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteEstadoService.cs",
-              "RelativeToolTip": "Application\\Interfaces\\ITramiteEstadoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T18:41:35.401Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GetAllTramiteEstadoResponse.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Response\\GetAllTramiteEstadoResponse.cs",
-              "RelativeDocumentMoniker": "Application\\Response\\GetAllTramiteEstadoResponse.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Response\\GetAllTramiteEstadoResponse.cs",
-              "RelativeToolTip": "Application\\Response\\GetAllTramiteEstadoResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T18:45:20.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TramiteEstadoQuery.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Query\\TramiteEstadoQuery.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Query\\TramiteEstadoQuery.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Infrastructure\\Query\\TramiteEstadoQuery.cs",
-              "RelativeToolTip": "Infrastructure\\Query\\TramiteEstadoQuery.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwBsAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T18:32:22.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ITramiteEstadoQuery.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteEstadoQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\ITramiteEstadoQuery.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Application\\Interfaces\\ITramiteEstadoQuery.cs",
-              "RelativeToolTip": "Application\\Interfaces\\ITramiteEstadoQuery.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T18:29:36.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "TramiteEstado.cs",
               "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Domain\\Entities\\TramiteEstado.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\TramiteEstado.cs",
@@ -274,19 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TramiteTipo.cs",
-              "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Domain\\Entities\\TramiteTipo.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\TramiteTipo.cs",
-              "ToolTip": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Domain\\Entities\\TramiteTipo.cs",
-              "RelativeToolTip": "Domain\\Entities\\TramiteTipo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T21:49:28.292Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "Tramite.cs",
               "DocumentMoniker": "C:\\Users\\lucia\\Desktop\\P.sof\\MicroservicioTramite\\Domain\\Entities\\Tramite.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Tramite.cs",

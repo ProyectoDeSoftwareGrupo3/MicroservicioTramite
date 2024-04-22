@@ -5,7 +5,7 @@ namespace TramiteRepository.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TramiteController : ControllerBase
+    public class TramitesController : ControllerBase
     {
     }
 }
