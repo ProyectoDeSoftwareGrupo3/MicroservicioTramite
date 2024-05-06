@@ -1,4 +1,5 @@
 using Application.Interfaces;
+using Application.Interfaces.ICurrentUser;
 using Application.UseCases;
 using Infrastructure.Persistence;
 using Infrastructure.Query;
@@ -71,7 +72,7 @@ builder.Services.AddSwaggerGen(swagger =>
 var connectionString = builder.Configuration["ConnectionString"];
 
 builder.Services.AddDbContext<TramiteDbContext>(options => options.UseSqlServer(connectionString));
-
+builder.Services.AddHttpContextAccessor();
 //Estados de los Tramites
 builder.Services.AddScoped<ITramiteEstadoQuery, TramiteEstadoQuery>();
 builder.Services.AddScoped<ITramiteEstadoService, TramiteEstadoService>();
@@ -79,6 +80,7 @@ builder.Services.AddScoped<ITramiteEstadoService, TramiteEstadoService>();
 //Tipos de Tramites
 builder.Services.AddScoped<ITramiteTipoQuery, TramiteTipoQuery>();
 builder.Services.AddScoped<ITramiteTipoService, TramiteTipoService>();
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
 var app = builder.Build();
 
