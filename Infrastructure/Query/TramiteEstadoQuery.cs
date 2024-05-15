@@ -1,20 +1,15 @@
-﻿using Application.Interfaces;
+﻿using Application.Exceptions;
+using Application.Interfaces.ITramiteEstado;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Query
 {
-    public class TramiteEstadoQuery: ITramiteEstadoQuery
+    public class TramiteEstadoQuery : ITramiteEstadoQuery
     {
         private readonly TramiteDbContext _context;
-        public TramiteEstadoQuery (TramiteDbContext context)
+        public TramiteEstadoQuery(TramiteDbContext context)
         {
             _context = context;
         }
@@ -25,10 +20,22 @@ namespace Infrastructure.Query
             {
                 return await _context.TramiteEstados.ToListAsync();
             }
-            catch (DbException)
+            catch (DbUpdateException)
             {
+                throw new Conflict("Error en la base de datos");
+            }
+        }
 
-                throw;
+        public async Task<TramiteEstado> GetTramiteEstadoById(int id)
+        {
+            try
+            {
+                var result = await _context.TramiteEstados.FirstOrDefaultAsync(t => t.Id == id);
+                return result;
+            }
+            catch (DbUpdateException)
+            {
+                throw new Conflict("Error en la base de datos");
             }
         }
     }

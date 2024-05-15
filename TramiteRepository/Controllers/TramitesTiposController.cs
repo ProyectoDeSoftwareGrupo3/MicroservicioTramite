@@ -1,4 +1,4 @@
-﻿using Application.Interfaces;
+﻿using Application.Interfaces.ITramiteTipo;
 using Application.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +17,7 @@ public class TramitesTiposController(ITramiteTipoService service) : ControllerBa
     public async Task<IActionResult> GetAllTramiteTipo()
     {
         try
-        
+
         {
             var result = await _service.GetAllTramiteTipo();
             return new JsonResult(result)

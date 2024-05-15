@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(TramiteDbContext))]
-    [Migration("20240421193441_Inicial")]
-    partial class Inicial
+    [Migration("20240515030915_inicial")]
+    partial class inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,8 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<Guid>("AnimalId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("AnimalId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Comentario")
                         .IsRequired()
@@ -53,8 +53,8 @@ namespace Infrastructure.Migrations
                     b.Property<int>("TramiteTipoId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("UsuarioId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

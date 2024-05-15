@@ -1,34 +1,46 @@
-﻿using Application.Interfaces;
+﻿using Application.Exceptions;
+using Application.Interfaces.IMappers;
+using Application.Interfaces.ITramiteTipo;
 using Application.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.UseCases
 {
-    public class TramiteTipoService: ITramiteTipoService
+    public class TramiteTipoService : ITramiteTipoService
     {
         private readonly ITramiteTipoQuery _query;
-        public TramiteTipoService(ITramiteTipoQuery query)
+        private readonly ITramiteTipoMapper _mapper;
+        public TramiteTipoService(ITramiteTipoQuery query, ITramiteTipoMapper mapper)
         {
             _query = query;
+            _mapper = mapper;
         }
         public async Task<List<GetAllTramiteTipoResponse>> GetAllTramiteTipo()
         {
             var tramitetipo = await _query.GetAllTramiteTipo();
-            var tramitetiporesponse = new List<GetAllTramiteTipoResponse>();
-            foreach(var tramite in tramitetipo)
-            {
-                var getalltramitetiporesponse = new GetAllTramiteTipoResponse
-                {
-                    Id = tramite.Id,
-                    Descripcion = tramite.Descripcion,
-                };
-                tramitetiporesponse.Add(getalltramitetiporesponse);
-            }
+            var tramitetiporesponse = await _mapper.GetTramiteTipos(tramitetipo);
             return tramitetiporesponse;
+        }
+        public async Task<GetAllTramiteTipoResponse> GetTramiteTipoResponseById(int id)
+        {
+            try
+            {
+                if (!await CheckTramiteId(id))
+                {
+                    throw new ExceptionNotFound("No Existe Tramite con ese Id");
+                }
+
+                var tramiteTipo = await _query.GetTramiteTipoById(id);
+                return await _mapper.TramiteTipoResponse(tramiteTipo);
+            }
+            catch (ExceptionNotFound e)
+            {
+
+                throw new ExceptionNotFound(e.Message);
+            }
+        }
+        private async Task<bool> CheckTramiteId(int id)
+        {
+            return (await _query.GetTramiteTipoById(id) != null);
         }
     }
 }

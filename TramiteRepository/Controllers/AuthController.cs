@@ -7,7 +7,7 @@ namespace TramiteRepository.Controllers;
 [Authorize]
 public class AuthController : Controller
 {
-    
+
     [HttpGet("me")]
     public IActionResult Me([FromServices] ICurrentUserService currentUser)
     {

@@ -1,6 +1,6 @@
-﻿namespace Domain.Entities
+﻿namespace Application.Request
 {
-    public class Tramite
+    public class UpdateTramiteRequest
     {
         public int Id { get; set; }
         public int UsuarioId { get; set; }
@@ -10,10 +10,5 @@
         public string Comentario { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinalizacion { get; set; }
-
-        public TramiteEstado TramiteEstado { get; set; }
-        //poner default en revision
-        public TramiteTipo TramiteTipo { get; set; }
-
     }
 }

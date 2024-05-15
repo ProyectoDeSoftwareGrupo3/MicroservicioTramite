@@ -1,14 +1,10 @@
 ﻿using Application.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Application.Interfaces
+namespace Application.Interfaces.ITramiteEstado
 {
     public interface ITramiteEstadoService
     {
         Task<List<GetAllTramiteEstadoResponse>> GetAllTramiteEstado();
+        Task<GetAllTramiteEstadoResponse> GetTramiteEstadoResponseById(int id);
     }
 }

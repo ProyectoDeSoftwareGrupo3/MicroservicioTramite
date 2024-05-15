@@ -1,13 +1,8 @@
-﻿using Application.Interfaces;
+﻿using Application.Exceptions;
+using Application.Interfaces.ITramiteTipo;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Query
 {
@@ -25,10 +20,21 @@ namespace Infrastructure.Query
             {
                 return await _context.TramiteTipos.ToListAsync();
             }
-            catch (DbException)
+            catch (DbUpdateException)
             {
+                throw new Conflict("Error en la base de datos");
+            }
+        }
 
-                throw;
+        public async Task<TramiteTipo> GetTramiteTipoById(int id)
+        {
+            try
+            {
+                return await _context.TramiteTipos.FirstAsync(t => t.Id == id);
+            }
+            catch (DbUpdateException)
+            {
+                throw new Conflict("Error en la base de datos");
             }
         }
     }

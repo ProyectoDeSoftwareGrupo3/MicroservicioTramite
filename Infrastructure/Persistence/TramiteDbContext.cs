@@ -1,17 +1,12 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence
 {
     public class TramiteDbContext : DbContext
     {
         public DbSet<Tramite> Tramites { get; set; }
-        public DbSet<TramiteTipo> TramiteTipos {  get; set; }
+        public DbSet<TramiteTipo> TramiteTipos { get; set; }
         public DbSet<TramiteEstado> TramiteEstados { get; set; }
 
         public TramiteDbContext(DbContextOptions<TramiteDbContext> options) : base(options) { }
@@ -58,7 +53,7 @@ namespace Infrastructure.Persistence
                 new TramiteEstado
                 {
                     Id = 1,
-                    Descripcion="Aprobado"
+                    Descripcion = "Aprobado"
                 },
                 new TramiteEstado
                 {
@@ -85,8 +80,8 @@ namespace Infrastructure.Persistence
                 },
                 new TramiteTipo
                 {
-                    Id=2,
-                    Descripcion= "Transito"
+                    Id = 2,
+                    Descripcion = "Transito"
                 }
                 );
         }

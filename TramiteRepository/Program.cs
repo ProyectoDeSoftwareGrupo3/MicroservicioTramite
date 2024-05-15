@@ -1,6 +1,11 @@
-using Application.Interfaces;
 using Application.Interfaces.ICurrentUser;
+using Application.Interfaces.IMappers;
+using Application.Interfaces.ITramite;
+using Application.Interfaces.ITramiteEstado;
+using Application.Interfaces.ITramiteTipo;
+using Application.Mappers;
 using Application.UseCases;
+using Infrastructure.Command;
 using Infrastructure.Persistence;
 using Infrastructure.Query;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -8,11 +13,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using TramiteRepository.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<TramiteRepositoryContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TramiteRepositoryContext") ?? throw new InvalidOperationException("Connection string 'TramiteRepositoryContext' not found.")));
 
 // Add services to the container.
 
@@ -70,7 +73,6 @@ builder.Services.AddSwaggerGen(swagger =>
 
 
 var connectionString = builder.Configuration["ConnectionString"];
-
 builder.Services.AddDbContext<TramiteDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddHttpContextAccessor();
 //Estados de los Tramites
@@ -80,8 +82,19 @@ builder.Services.AddScoped<ITramiteEstadoService, TramiteEstadoService>();
 //Tipos de Tramites
 builder.Services.AddScoped<ITramiteTipoQuery, TramiteTipoQuery>();
 builder.Services.AddScoped<ITramiteTipoService, TramiteTipoService>();
-builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
+builder.Services.AddScoped<ITramiteQuery, TramiteQuery>();
+builder.Services.AddScoped<ITramiteCommand, TramiteCommand>();
+builder.Services.AddScoped<ITramiteService, TramiteService>();
+
+
+builder.Services.AddScoped<ITramiteTipoMapper, TramiteTipoMapper>();
+builder.Services.AddScoped<ITramiteEstadoMapper, TramiteEstadoMapper>();
+builder.Services.AddScoped<ITramiteMapper, TramiteMapper>();
+
+
+
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
