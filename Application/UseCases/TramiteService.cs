@@ -80,7 +80,7 @@ namespace Application.UseCases
                     UsuarioId = request.UsuarioId
                 };
                 var result = await _command.CreateTramite(tramite);
-                return await _mapper.TramiteResponse(result);
+                return await _mapper.TramiteResponse(await _query.GetTramiteById(result.Id));
             }
             catch (Conflict e)
             {

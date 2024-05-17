@@ -94,7 +94,7 @@ builder.Services.AddScoped<ITramiteMapper, TramiteMapper>();
 
 
 
-builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+//builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
