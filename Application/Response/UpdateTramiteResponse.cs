@@ -3,7 +3,7 @@
     public class UpdateTramiteResponse
     {
         public int Id { get; set; }
-        public int UsuarioId { get; set; }
+        public Guid UsuarioId { get; set; }
         public GetAllTramiteEstadoResponse EstadoResponse { get; set; }
         public GetAllTramiteTipoResponse TipoResponse { get; set; }
         public int AnimalId { get; set; }

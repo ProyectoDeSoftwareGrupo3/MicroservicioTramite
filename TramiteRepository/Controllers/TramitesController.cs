@@ -53,14 +53,14 @@ public class TramitesController : ControllerBase
             return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
         }
     }
-    [HttpGet("{id}")]
+    [HttpGet("{animalId}")]
     [ProducesResponseType(typeof(TramiteResponse), 200)]
     [ProducesResponseType(typeof(ExceptionMessage), 404)]
-    public async Task<IActionResult> GetTramiteById(int id)
+    public async Task<IActionResult> GetTramiteById(int animalId)
     {
         try
         {
-            var result = await _tramiteService.GetTramiteById(id);
+            var result = await _tramiteService.GetTramiteById(animalId);
             return new JsonResult(result) { StatusCode = 200 };
         }
         catch (ExceptionNotFound ex)
