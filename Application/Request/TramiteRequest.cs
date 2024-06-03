@@ -2,7 +2,7 @@
 {
     public class TramiteRequest
     {
-        public int UsuarioId { get; set; }
+        public Guid UsuarioId { get; set; }
         public int UsuarioAdoptante { get; set; }
         public int TramiteTipoId { get; set; }
         public int AnimalId { get; set; }

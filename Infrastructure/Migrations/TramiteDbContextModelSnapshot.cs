@@ -81,8 +81,8 @@ namespace Infrastructure.Migrations
                     b.Property<int>("UsuarioAdoptanteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UsuarioId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Vacunados")
                         .HasColumnType("bit");

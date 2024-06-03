@@ -3,7 +3,7 @@
     public class TramiteResponse
     {
         public int Id { get; set; }
-        public int UsuarioId { get; set; }
+        public Guid UsuarioId { get; set; }
         public int UsuarioAdoptanteId { get; set; }
         public int AnimalId { get; set; }
         public bool HayChicos { get; set; }

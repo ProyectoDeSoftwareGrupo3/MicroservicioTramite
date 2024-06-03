@@ -3,7 +3,7 @@
     public class Tramite
     {
         public int Id { get; set; }
-        public int UsuarioId { get; set; }
+        public Guid UsuarioId { get; set; }
         public int UsuarioAdoptanteId {  get; set; }
         public bool Chicos { get; set; }
         public int Cantidadpersonas {  get; set; }

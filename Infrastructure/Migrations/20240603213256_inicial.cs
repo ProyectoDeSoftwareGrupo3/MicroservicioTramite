@@ -45,7 +45,7 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioId = table.Column<int>(type: "int", nullable: false),
+                    UsuarioId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UsuarioAdoptanteId = table.Column<int>(type: "int", nullable: false),
                     Chicos = table.Column<bool>(type: "bit", nullable: false),
                     Cantidadpersonas = table.Column<int>(type: "int", nullable: false),

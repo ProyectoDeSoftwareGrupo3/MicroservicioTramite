@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(TramiteDbContext))]
-    [Migration("20240603203229_inicial")]
+    [Migration("20240603213256_inicial")]
     partial class inicial
     {
         /// <inheritdoc />
@@ -84,8 +84,8 @@ namespace Infrastructure.Migrations
                     b.Property<int>("UsuarioAdoptanteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UsuarioId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Vacunados")
                         .HasColumnType("bit");
