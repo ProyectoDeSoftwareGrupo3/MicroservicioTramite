@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,11 +45,22 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false),
+                    UsuarioAdoptanteId = table.Column<int>(type: "int", nullable: false),
+                    Chicos = table.Column<bool>(type: "bit", nullable: false),
+                    Cantidadpersonas = table.Column<int>(type: "int", nullable: false),
+                    HayAnimales = table.Column<bool>(type: "bit", nullable: false),
+                    Vacunados = table.Column<bool>(type: "bit", nullable: false),
+                    Castrados = table.Column<bool>(type: "bit", nullable: false),
+                    LugarAdopcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PropietarioInquilino = table.Column<bool>(type: "bit", nullable: false),
+                    AireLibre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MotivoAdopcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HorasSolo = table.Column<int>(type: "int", nullable: false),
+                    PaseoMes = table.Column<int>(type: "int", nullable: false),
                     TramiteTipoId = table.Column<int>(type: "int", nullable: false),
                     TramiteEstadoId = table.Column<int>(type: "int", nullable: false),
                     AnimalId = table.Column<int>(type: "int", nullable: false),
-                    Comentario = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     FechaInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FechaFinalizacion = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },

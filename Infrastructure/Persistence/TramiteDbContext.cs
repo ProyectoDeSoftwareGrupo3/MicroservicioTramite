@@ -38,7 +38,7 @@ namespace Infrastructure.Persistence
                 entity.ToTable("Tramite");
                 entity.HasKey(t => t.Id);
                 entity.Property(t => t.Id).ValueGeneratedOnAdd();
-                entity.Property(t => t.Comentario).HasMaxLength(500);
+                
 
                 entity.HasOne(tt => tt.TramiteTipo)
                 .WithMany(t => t.Tramites)

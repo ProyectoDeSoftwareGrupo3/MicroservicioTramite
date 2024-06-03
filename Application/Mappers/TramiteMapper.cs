@@ -18,13 +18,24 @@ namespace Application.Mappers
         {
             var response = new TramiteResponse
             {
+                UsuarioId = tramite.UsuarioId,
+                UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
                 AnimalId = tramite.AnimalId,
-                Comentario = tramite.Comentario,
+                HayChicos=tramite.Chicos,
+                Cantidadpersonas = tramite.Cantidadpersonas,
+                HayAnimales = tramite.HayAnimales,
+                Vacunados= tramite.Vacunados,
+                Castrados=tramite.Castrados,
+                LugarAdopcion=tramite.LugarAdopcion,
+                PropietarioOInquilino=tramite.PropietarioInquilino,
+                AireLibre=tramite.AireLibre,
+                MotivoAdopcion=tramite.MotivoAdopcion,
+                HorasSolo=tramite.HorasSolo,
+                PaseoxMes=tramite.PaseoMes,
+                FechaInicio= tramite.FechaInicio,
                 EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.TramiteEstado),
                 TipoResponse = await _tipoMapper.TramiteTipoResponse(tramite.TramiteTipo),
-                FechaFinalizacion = tramite.FechaFinalizacion,
-                FechaInicio = tramite.FechaInicio,
-                UsuarioId = tramite.UsuarioId,
+                
             };
             return response;
         }
@@ -33,15 +44,27 @@ namespace Application.Mappers
         {
             var response = new UpdateTramiteResponse
             {
-
-                AnimalId = tramite.AnimalId,
-                Comentario = tramite.Comentario,
                 Id = tramite.Id,
-                EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.TramiteEstado),
-                TipoResponse = await _tipoMapper.TramiteTipoResponse(tramite.TramiteTipo),
+                UsuarioId = tramite.UsuarioId,
+                UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
+                AnimalId = tramite.AnimalId,
+                HayChicos = tramite.Chicos,
+                Cantidadpersonas=tramite.Cantidadpersonas,
+                HayAnimales=tramite.HayAnimales,
+                Vacunados=tramite.Vacunados,
+                Castrados=tramite.Castrados,
+                LugarAdopcion=tramite.LugarAdopcion,
+                PropietarioOInquilino=tramite.PropietarioInquilino,
+                AireLibre=tramite.AireLibre,
+                MotivoAdopcion=tramite.MotivoAdopcion,
+                HorasSolo=tramite.HorasSolo,
+                PaseoxMes=tramite.PaseoMes,
+                TramiteTipoId=tramite.TramiteTipoId,
+                TramiteEstadoId=tramite.TramiteEstadoId,
                 FechaFinalizacion = tramite.FechaFinalizacion,
                 FechaInicio = tramite.FechaInicio,
-                UsuarioId = tramite.UsuarioId,
+                EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.TramiteEstado),
+                TipoResponse = await _tipoMapper.TramiteTipoResponse(tramite.TramiteTipo),
             };
             return response;
         }

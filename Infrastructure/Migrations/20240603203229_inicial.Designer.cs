@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(TramiteDbContext))]
-    [Migration("20240520212614_initial")]
-    partial class initial
+    [Migration("20240603203229_inicial")]
+    partial class inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,13 +33,21 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AireLibre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("AnimalId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Comentario")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                    b.Property<int>("Cantidadpersonas")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Castrados")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Chicos")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("FechaFinalizacion")
                         .HasColumnType("datetime2");
@@ -47,14 +55,40 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("FechaInicio")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("HayAnimales")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("HorasSolo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LugarAdopcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MotivoAdopcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PaseoMes")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("PropietarioInquilino")
+                        .HasColumnType("bit");
+
                     b.Property<int>("TramiteEstadoId")
                         .HasColumnType("int");
 
                     b.Property<int>("TramiteTipoId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("UsuarioId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UsuarioAdoptanteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Vacunados")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

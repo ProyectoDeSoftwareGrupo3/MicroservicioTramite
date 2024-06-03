@@ -35,10 +35,24 @@ namespace Infrastructure.Command
             {
                 var tramiteUpdated = _context.Tramites.FirstOrDefault(t => t.Id == request.Id);
                 tramiteUpdated.UsuarioId = request.UsuarioId;
+                tramiteUpdated.UsuarioAdoptanteId = request.UsuarioAdoptanteId;
+                tramiteUpdated.AnimalId = request.AnimalId;
+                tramiteUpdated.Chicos = request.HayChicos;
+                tramiteUpdated.Cantidadpersonas = request.Cantidadpersonas;
+                tramiteUpdated.HayAnimales = request.HayAnimales;
+                tramiteUpdated.Vacunados = request.Vacunados;
+                tramiteUpdated.Castrados=request.Castrados;
+                tramiteUpdated.LugarAdopcion=request.LugarAdopcion;
+                tramiteUpdated.PropietarioInquilino = request.PropietarioOInquilino;
+                tramiteUpdated.AireLibre = request.AireLibre;
+                tramiteUpdated.MotivoAdopcion= request.MotivoAdopcion;
+                tramiteUpdated.HorasSolo=request.HorasSolo;
+                tramiteUpdated.PaseoMes = request.PaseoxMes;
+
                 tramiteUpdated.TramiteTipoId = request.TramiteTipoId;
                 tramiteUpdated.TramiteEstadoId = request.TramiteEstadoId;
-                tramiteUpdated.AnimalId = request.AnimalId;
-                tramiteUpdated.Comentario = request.Comentario;
+                
+                
                 tramiteUpdated.FechaInicio = request.FechaInicio;
                 tramiteUpdated.FechaFinalizacion = request.FechaFinalizacion;
                 await _context.SaveChangesAsync();

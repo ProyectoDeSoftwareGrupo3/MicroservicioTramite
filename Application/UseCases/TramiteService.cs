@@ -71,13 +71,20 @@ namespace Application.UseCases
                 }
                 var tramite = new Tramite
                 {
+                    UsuarioId = request.UsuarioId,
+                    UsuarioAdoptanteId = request.UsuarioAdoptante,
                     TramiteTipoId = request.TramiteTipoId,
                     AnimalId = request.AnimalId,
-                    Comentario = request.Comentario,
-                    FechaFinalizacion = request.FechaFinalizacion,
-                    FechaInicio = request.FechaInicio,
                     TramiteEstadoId = 2,
-                    UsuarioId = request.UsuarioId
+                    Chicos = request.HayChicos,
+                    Cantidadpersonas = request.Cantidadpersonas,
+                    HayAnimales = request.HayAnimales,
+                    Vacunados = request.Vacunados,
+                    Castrados = request.Castrados,
+                    AireLibre = request.AireLibre,
+                    MotivoAdopcion = request.MotivoAdopcion,
+                    HorasSolo = request.HorasSolo,
+                    FechaInicio = DateTime.Now,
                 };
                 var result = await _command.CreateTramite(tramite);
                 return await _mapper.TramiteResponse(await _query.GetTramiteById(result.Id));
