@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(TramiteDbContext))]
-    [Migration("20240603213256_inicial")]
+    [Migration("20240609231138_inicial")]
     partial class inicial
     {
         /// <inheritdoc />
@@ -48,6 +48,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<bool>("Chicos")
                         .HasColumnType("bit");
+
+                    b.Property<int>("EdadHijoMenor")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("FechaFinalizacion")
                         .HasColumnType("datetime2");

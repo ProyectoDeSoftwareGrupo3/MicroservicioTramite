@@ -38,6 +38,7 @@ namespace Infrastructure.Command
                 tramiteUpdated.UsuarioAdoptanteId = request.UsuarioAdoptanteId;
                 tramiteUpdated.AnimalId = request.AnimalId;
                 tramiteUpdated.Chicos = request.HayChicos;
+                tramiteUpdated.EdadHijoMenor = request.EdadHijoMenor;
                 tramiteUpdated.Cantidadpersonas = request.Cantidadpersonas;
                 tramiteUpdated.HayAnimales = request.HayAnimales;
                 tramiteUpdated.Vacunados = request.Vacunados;

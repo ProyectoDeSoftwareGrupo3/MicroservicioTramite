@@ -6,6 +6,7 @@
         public Guid UsuarioId { get; set; }
         public int UsuarioAdoptanteId {  get; set; }
         public bool Chicos { get; set; }
+        public int EdadHijoMenor {get; set; }
         public int Cantidadpersonas {  get; set; }
         public bool HayAnimales {  get; set; }
         public bool Vacunados {  get; set; }

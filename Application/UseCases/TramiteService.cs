@@ -77,6 +77,7 @@ namespace Application.UseCases
                     AnimalId = request.AnimalId,
                     TramiteEstadoId = 2,
                     Chicos = request.HayChicos,
+                    EdadHijoMenor = request.EdadHijoMenor,
                     Cantidadpersonas = request.Cantidadpersonas,
                     HayAnimales = request.HayAnimales,
                     Vacunados = request.Vacunados,
@@ -114,6 +115,33 @@ namespace Application.UseCases
                 }
                 var tramiteUpdated = await _command.UpdateTramite(request);
                 return await _mapper.UpdateTramiteResponse(tramiteUpdated);
+            }
+            catch (ExceptionNotFound e)
+            {
+
+                throw new ExceptionNotFound(e.Message);
+            }
+        }
+
+        public async Task<TramiteByMonthResponse> GetTramiteByMonth(DateTime dateTime)
+        {
+            try
+            {
+                var tramite = await _query.GetTramites();
+                List<Tramite> lista = new List<Tramite>();
+                foreach (var item in tramite)
+                {
+                    if (item.FechaInicio.Month == dateTime.Month && item.FechaInicio.Year == dateTime.Year)
+                    {
+                        lista.Add(item);
+                    }
+                }
+                if (lista.Count==0)
+                {
+                    throw new ExceptionNotFound("No hubieron tramites en el mes ingresado");
+                }
+                return await _mapper.TramiteByMonthResponse(lista);
+                
             }
             catch (ExceptionNotFound e)
             {

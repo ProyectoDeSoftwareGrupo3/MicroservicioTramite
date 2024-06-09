@@ -48,6 +48,7 @@ namespace Infrastructure.Migrations
                     UsuarioId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UsuarioAdoptanteId = table.Column<int>(type: "int", nullable: false),
                     Chicos = table.Column<bool>(type: "bit", nullable: false),
+                    EdadHijoMenor = table.Column<int>(type: "int", nullable: false),
                     Cantidadpersonas = table.Column<int>(type: "int", nullable: false),
                     HayAnimales = table.Column<bool>(type: "bit", nullable: false),
                     Vacunados = table.Column<bool>(type: "bit", nullable: false),

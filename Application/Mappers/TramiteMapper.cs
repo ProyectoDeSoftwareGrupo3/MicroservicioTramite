@@ -13,6 +13,35 @@ namespace Application.Mappers
             _estadoMapper = estadoMapper;
             _tipoMapper = tipoMapper;
         }
+        public Task<TramiteByMonthResponse> TramiteByMonthResponse(List<Tramite> tramites)
+        {
+            int aprobado = 0;
+            int rechazado = 0;
+            int revision = 0;
+            foreach (var item in tramites)
+            {
+                if (item.TramiteEstadoId == 1)
+                {
+                    aprobado += 1;
+                }
+                if (item.TramiteEstadoId == 2)
+                {
+                    rechazado += 1;
+                }
+                if (item.TramiteEstadoId == 3)
+                {
+                    revision += 1;
+                }
+            }
+            var response = new TramiteByMonthResponse
+            {
+                EstadoAprobado = aprobado,
+                EstadoRechazado = rechazado,
+                EstadoRevision = revision,
+            };
+
+            return  Task.FromResult(response);
+        }
 
         public async Task<TramiteResponse> TramiteResponse(Tramite tramite)
         {
@@ -22,6 +51,7 @@ namespace Application.Mappers
                 UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
                 AnimalId = tramite.AnimalId,
                 HayChicos=tramite.Chicos,
+                EdadHijoMenor = tramite.EdadHijoMenor,
                 Cantidadpersonas = tramite.Cantidadpersonas,
                 HayAnimales = tramite.HayAnimales,
                 Vacunados= tramite.Vacunados,
@@ -49,6 +79,7 @@ namespace Application.Mappers
                 UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
                 AnimalId = tramite.AnimalId,
                 HayChicos = tramite.Chicos,
+                EdadHijoMenor = tramite.EdadHijoMenor,
                 Cantidadpersonas=tramite.Cantidadpersonas,
                 HayAnimales=tramite.HayAnimales,
                 Vacunados=tramite.Vacunados,
