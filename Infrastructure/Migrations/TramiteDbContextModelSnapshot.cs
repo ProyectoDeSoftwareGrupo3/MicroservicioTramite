@@ -97,6 +97,123 @@ namespace Infrastructure.Migrations
                     b.HasIndex("TramiteTipoId");
 
                     b.ToTable("Tramite", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AireLibre = "Patio",
+                            AnimalId = 1,
+                            Cantidadpersonas = 4,
+                            Castrados = true,
+                            Chicos = true,
+                            EdadHijoMenor = 10,
+                            FechaFinalizacion = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FechaInicio = new DateTime(2024, 6, 10, 17, 31, 11, 657, DateTimeKind.Local).AddTicks(2457),
+                            HayAnimales = true,
+                            HorasSolo = 4,
+                            LugarAdopcion = "Casa",
+                            MotivoAdopcion = "Compania",
+                            PaseoMes = 10,
+                            PropietarioInquilino = true,
+                            TramiteEstadoId = 2,
+                            TramiteTipoId = 1,
+                            UsuarioAdoptanteId = 1,
+                            UsuarioId = new Guid("bf825f14-9af5-458c-9339-3e789a17a88c"),
+                            Vacunados = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AireLibre = "No posee",
+                            AnimalId = 2,
+                            Cantidadpersonas = 4,
+                            Castrados = false,
+                            Chicos = true,
+                            EdadHijoMenor = 0,
+                            FechaFinalizacion = new DateTime(2024, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FechaInicio = new DateTime(2024, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HayAnimales = false,
+                            HorasSolo = 2,
+                            LugarAdopcion = "Casa",
+                            MotivoAdopcion = "Compania",
+                            PaseoMes = 10,
+                            PropietarioInquilino = true,
+                            TramiteEstadoId = 1,
+                            TramiteTipoId = 1,
+                            UsuarioAdoptanteId = 2,
+                            UsuarioId = new Guid("f60a95b7-dcdc-4b96-aa63-0cd6bafdff29"),
+                            Vacunados = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AireLibre = "Granja",
+                            AnimalId = 3,
+                            Cantidadpersonas = 4,
+                            Castrados = true,
+                            Chicos = true,
+                            EdadHijoMenor = 10,
+                            FechaFinalizacion = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FechaInicio = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HayAnimales = true,
+                            HorasSolo = 4,
+                            LugarAdopcion = "Granja",
+                            MotivoAdopcion = "Vigilancia",
+                            PaseoMes = 5,
+                            PropietarioInquilino = true,
+                            TramiteEstadoId = 3,
+                            TramiteTipoId = 1,
+                            UsuarioAdoptanteId = 4,
+                            UsuarioId = new Guid("111c5b95-d813-4070-a625-0ddbfc8bc797"),
+                            Vacunados = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AireLibre = "no posee",
+                            AnimalId = 4,
+                            Cantidadpersonas = 2,
+                            Castrados = false,
+                            Chicos = false,
+                            EdadHijoMenor = 0,
+                            FechaFinalizacion = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FechaInicio = new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HayAnimales = false,
+                            HorasSolo = 4,
+                            LugarAdopcion = "Casa",
+                            MotivoAdopcion = "Vigilancia",
+                            PaseoMes = 4,
+                            PropietarioInquilino = false,
+                            TramiteEstadoId = 2,
+                            TramiteTipoId = 1,
+                            UsuarioAdoptanteId = 4,
+                            UsuarioId = new Guid("1af2a1e5-179a-4d93-8b89-b8989a03cd58"),
+                            Vacunados = false
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AireLibre = "Patio",
+                            AnimalId = 5,
+                            Cantidadpersonas = 4,
+                            Castrados = true,
+                            Chicos = true,
+                            EdadHijoMenor = 10,
+                            FechaFinalizacion = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FechaInicio = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HayAnimales = true,
+                            HorasSolo = 4,
+                            LugarAdopcion = "Casa",
+                            MotivoAdopcion = "Compania",
+                            PaseoMes = 10,
+                            PropietarioInquilino = true,
+                            TramiteEstadoId = 2,
+                            TramiteTipoId = 2,
+                            UsuarioAdoptanteId = 4,
+                            UsuarioId = new Guid("80898b3b-e900-436d-b37a-04206aecd84c"),
+                            Vacunados = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.TramiteEstado", b =>
@@ -130,11 +247,6 @@ namespace Infrastructure.Migrations
                         {
                             Id = 3,
                             Descripcion = "Rechazado"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Descripcion = "Concretado"
                         });
                 });
 

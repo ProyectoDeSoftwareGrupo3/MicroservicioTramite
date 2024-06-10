@@ -4,6 +4,7 @@ using Application.Request;
 using Application.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace TramiteRepository.Controllers;
 
@@ -53,15 +54,32 @@ public class TramitesController : ControllerBase
             return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
         }
     }
-    [HttpGet]
+
+    [HttpGet("Thismonth")]
     [ProducesResponseType(typeof(TramiteResponse), 200)]
     [ProducesResponseType(typeof(ExceptionMessage), 404)]
-    public async Task<IActionResult> GetTramiteByMonth(DateTime dateTime)
+    public async Task<IActionResult> GetTramiteByMonth()
     {
         try
         {
-            var result = await _tramiteService.GetTramiteByMonth(dateTime);
+            var result = await _tramiteService.GetTramiteByMonth(DateTime.Now);
             return new JsonResult(result) { StatusCode=200 };
+        }
+        catch (ExceptionNotFound ex)
+        {
+
+            return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
+        }
+    }
+    [HttpGet("ByTramiteEstado")]
+    [ProducesResponseType(typeof(TramiteResponse), 200)]
+    [ProducesResponseType(typeof(ExceptionMessage), 404)]
+    public async Task<IActionResult> GetAllTramitesByTramiteEstado(int? tramiteEstadoId)
+    {
+        try
+        {
+            var result = await _tramiteService.GetAllTramitesByEstadoId(tramiteEstadoId);
+            return new JsonResult(result) { StatusCode = 200 };
         }
         catch (ExceptionNotFound ex)
         {

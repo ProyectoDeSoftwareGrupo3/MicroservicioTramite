@@ -43,6 +43,41 @@ namespace Application.Mappers
             return  Task.FromResult(response);
         }
 
+        public async Task<List<TramiteResponse>> GetTramitesByEstadoResponse(List<Tramite> tramites)
+        {
+            List<TramiteResponse> listresponse = new List<TramiteResponse>();
+            foreach (var tramite in tramites)
+            {
+                var response = new TramiteResponse
+                {
+                    Id= tramite.Id,
+                    UsuarioId = tramite.UsuarioId,
+                    UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
+                    AnimalId = tramite.AnimalId,
+                    HayChicos = tramite.Chicos,
+                    EdadHijoMenor = tramite.EdadHijoMenor,
+                    Cantidadpersonas = tramite.Cantidadpersonas,
+                    HayAnimales = tramite.HayAnimales,
+                    Vacunados = tramite.Vacunados,
+                    Castrados = tramite.Castrados,
+                    LugarAdopcion = tramite.LugarAdopcion,
+                    PropietarioOInquilino = tramite.PropietarioInquilino,
+                    AireLibre = tramite.AireLibre,
+                    MotivoAdopcion = tramite.MotivoAdopcion,
+                    HorasSolo = tramite.HorasSolo,
+                    PaseoxMes = tramite.PaseoMes,
+                    FechaInicio = tramite.FechaInicio,
+                    FechaFinalizacion= tramite.FechaFinalizacion,
+                    EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.TramiteEstado),
+                    TipoResponse = await _tipoMapper.TramiteTipoResponse(tramite.TramiteTipo),
+
+                };
+
+                listresponse.Add(response);
+            }
+            return listresponse;
+        }
+
         public async Task<TramiteResponse> TramiteResponse(Tramite tramite)
         {
             var response = new TramiteResponse

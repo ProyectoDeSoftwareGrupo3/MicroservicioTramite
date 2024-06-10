@@ -7,5 +7,6 @@ namespace Application.Interfaces.ITramite
         Task<Tramite> GetTramiteById(int id);
         Task<Tramite> GetTramiteByAnimalId(int id);
         Task<List<Tramite>> GetTramites();
+        Task<List<Tramite>> GetTramitesByEstado(int? tramiteEstado);
     }
 }

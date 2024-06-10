@@ -10,5 +10,6 @@ namespace Application.Interfaces.ITramite
         Task<TramiteResponse> GetTramiteById(int id);
         Task<TramiteResponse> GetTramiteByAnimalId(int id);
         Task<TramiteByMonthResponse> GetTramiteByMonth(DateTime dateTime);
+        Task<List<TramiteResponse>> GetAllTramitesByEstadoId(int? estadoTramiteId);
     }
 }

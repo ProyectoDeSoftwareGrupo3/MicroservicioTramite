@@ -46,6 +46,30 @@ namespace Infrastructure.Query
             }
         }
 
+        public async Task<List<Tramite>>GetTramitesByEstado(int? tramiteEstado)
+        {
+            try
+            {
+                if (tramiteEstado == null)
+                {
+                    return await _context.Tramites
+                        .Include(t => t.TramiteEstado)
+                        .Include(t => t.TramiteTipo)
+                        .ToListAsync();
+                }
+
+                return await _context.Tramites
+                        .Where(t => t.TramiteEstadoId == tramiteEstado)
+                        .Include(t => t.TramiteEstado)
+                        .Include(t => t.TramiteTipo)
+                        .ToListAsync();
+            }
+            catch (DbException)
+            {
+                throw new Conflict("Hubo un error en la base de datos");
+            }
+        }
+
         public async Task<List<Tramite>> GetTramites()
         {
             try

@@ -89,8 +89,7 @@ namespace Infrastructure.Migrations
                 {
                     { 1, "Aprobado" },
                     { 2, "Revisión" },
-                    { 3, "Rechazado" },
-                    { 4, "Concretado" }
+                    { 3, "Rechazado" }
                 });
 
             migrationBuilder.InsertData(
@@ -100,6 +99,18 @@ namespace Infrastructure.Migrations
                 {
                     { 1, "Adopción" },
                     { 2, "Transito" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Tramite",
+                columns: new[] { "Id", "AireLibre", "AnimalId", "Cantidadpersonas", "Castrados", "Chicos", "EdadHijoMenor", "FechaFinalizacion", "FechaInicio", "HayAnimales", "HorasSolo", "LugarAdopcion", "MotivoAdopcion", "PaseoMes", "PropietarioInquilino", "TramiteEstadoId", "TramiteTipoId", "UsuarioAdoptanteId", "UsuarioId", "Vacunados" },
+                values: new object[,]
+                {
+                    { 1, "Patio", 1, 4, true, true, 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 10, 17, 31, 11, 657, DateTimeKind.Local).AddTicks(2457), true, 4, "Casa", "Compania", 10, true, 2, 1, 1, new Guid("bf825f14-9af5-458c-9339-3e789a17a88c"), true },
+                    { 2, "No posee", 2, 4, false, true, 0, new DateTime(2024, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 2, "Casa", "Compania", 10, true, 1, 1, 2, new Guid("f60a95b7-dcdc-4b96-aa63-0cd6bafdff29"), false },
+                    { 3, "Granja", 3, 4, true, true, 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 4, "Granja", "Vigilancia", 5, true, 3, 1, 4, new Guid("111c5b95-d813-4070-a625-0ddbfc8bc797"), true },
+                    { 4, "no posee", 4, 2, false, false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, "Casa", "Vigilancia", 4, false, 2, 1, 4, new Guid("1af2a1e5-179a-4d93-8b89-b8989a03cd58"), false },
+                    { 5, "Patio", 5, 4, true, true, 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 4, "Casa", "Compania", 10, true, 2, 2, 4, new Guid("80898b3b-e900-436d-b37a-04206aecd84c"), true }
                 });
 
             migrationBuilder.CreateIndex(

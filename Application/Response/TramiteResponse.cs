@@ -19,6 +19,7 @@
         public int HorasSolo { get; set; }
         public int PaseoxMes { get; set; }
         public DateTime FechaInicio { get; set; }
+        public DateTime FechaFinalizacion { get; set; }
         public GetAllTramiteEstadoResponse EstadoResponse { get; set; }
         public GetAllTramiteTipoResponse TipoResponse { get; set; }
     }

@@ -25,6 +25,25 @@ namespace Application.UseCases
             _estadoservice = estadoService;
             _tipoService = tipoService;
         }
+        public async Task<List<TramiteResponse>> GetAllTramitesByEstadoId(int? estadoTramiteId)
+        {
+            try
+            {
+                if (estadoTramiteId<1 || estadoTramiteId>3)
+                {
+                    throw new ExceptionNotFound("No existe tramite con ese estado");
+                }
+                var tramites = await _query.GetTramitesByEstado(estadoTramiteId);
+                return await _mapper.GetTramitesByEstadoResponse(tramites);
+
+            }
+            catch (ExceptionNotFound e)
+            {
+
+                throw new ExceptionNotFound(e.Message);
+            }
+            
+        }
 
         public async Task<TramiteResponse> GetTramiteById(int id)
         {
