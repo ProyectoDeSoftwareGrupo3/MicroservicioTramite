@@ -4,7 +4,9 @@ namespace Application.Interfaces.ITramiteTipo
 {
     public interface ITramiteTipoQuery
     {
-        Task<List<TramiteTipo>> GetAllTramiteTipo();
-        Task<TramiteTipo> GetTramiteTipoById(int id);
+        Task<List<TramiteAdopcion>> GetAllTramiteAdopcion();
+        Task<TramiteAdopcion> GetTramiteAdopcionById(Guid id);
+        Task<List<TramiteTransito>> GetAllTramiteTransito();
+        Task<TramiteTransito> GetTramiteTransitoById(Guid id);
     }
 }

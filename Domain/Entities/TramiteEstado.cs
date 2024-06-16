@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
-        public List<Tramite> Tramites { get; set; }
+        public List<CabeceraTramite> CabeceraTramite { get; set; }
     }
 }

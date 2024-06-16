@@ -1,6 +1,5 @@
 ﻿using Application.Interfaces.ITramiteEstado;
 using Application.Response;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TramiteRepository.Controllers;
@@ -12,7 +11,7 @@ public class TramiteEstadosController(ITramiteEstadoService service) : Controlle
     private readonly ITramiteEstadoService _service = service;
 
     [HttpGet] //https://localhost:7285/api/TramiteEstados
-    [Authorize]
+    //[Authorize]
     [ProducesResponseType(typeof(GetAllTramiteEstadoResponse), 200)]
     public async Task<IActionResult> GetAllTramiteEstado()
     {

@@ -2,7 +2,6 @@
 using Application.Interfaces.IMappers;
 using Application.Interfaces.ITramite;
 using Application.Interfaces.ITramiteEstado;
-using Application.Interfaces.ITramiteTipo;
 using Application.Request;
 using Application.Response;
 using Domain.Entities;
@@ -14,27 +13,110 @@ namespace Application.UseCases
         private readonly ITramiteCommand _command;
         private readonly ITramiteQuery _query;
         private readonly ITramiteEstadoService _estadoservice;
-        private readonly ITramiteTipoService _tipoService;
         private readonly ITramiteMapper _mapper;
 
-        public TramiteService(ITramiteCommand command, ITramiteQuery query, ITramiteMapper mapper, ITramiteTipoService tipoService, ITramiteEstadoService estadoService)
+        public TramiteService(ITramiteCommand command, ITramiteQuery query, ITramiteMapper mapper, ITramiteEstadoService estadoService)
         {
             _command = command;
             _query = query;
             _mapper = mapper;
             _estadoservice = estadoService;
-            _tipoService = tipoService;
+
         }
-        public async Task<List<TramiteResponse>> GetAllTramitesByEstadoId(int? estadoTramiteId)
+
+        public async Task<TramiteResponse> DeleteTramite(int Id)
         {
             try
             {
-                if (estadoTramiteId<1 || estadoTramiteId>3)
+                if (!await CheckTramite(Id))
                 {
-                    throw new ExceptionNotFound("No existe tramite con ese estado");
+                    throw new ExceptionNotFound("No existe ese tramite");
                 }
-                var tramites = await _query.GetTramitesByEstado(estadoTramiteId);
-                return await _mapper.GetTramitesByEstadoResponse(tramites);
+                var response = await _query.GetTramiteById(Id);
+                var tramite = await _command.DeleteTramite(Id);
+
+                return await _mapper.TramiteResponse(response);
+            }
+            catch (ExceptionNotFound e)
+            {
+
+                throw new ExceptionNotFound(e.Message);
+            }
+        }
+
+        public async Task<TramiteAdopcionResponse> CreateTramiteAdopcion(TramiteAdopcionRequest request)
+        {
+            try
+            {
+                var tramiteAdopcion = new TramiteAdopcion
+                {
+                    AireLibre = request.AireLibre,
+                    CantidadPersonas = request.CantidadPersonas,
+                    Castrados = request.Castrados,
+                    EdadHijoMenor = request.EdadHijoMenor,
+                    HayChicos = request.HayChicos,
+                    HayMascotas = request.HayMascotas,
+                    HorasSolo = request.HorasSolo,
+                    MotivoAdopcion = request.MotivoAdopcion,
+                    PaseoXMes = request.PaseoXMes,
+                    PropietarioInquilino = request.PropietarioInquilino,
+                    Vacunados = request.Vacunados,
+                };
+                var result = await _command.CreateTramiteAdopcion(tramiteAdopcion);
+
+                return await _mapper.TramiteAdopcionResponse(result);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<TramiteTransitoResponse> CreateTramiteTransito(TramiteTransitoRequest request)
+        {
+            try
+            {
+                var tramiteTransito = new TramiteTransito
+                {
+                    ActitudHaciaAnimales = request.ActitudHaciaAnimales,
+                    Cantidadpersonas = request.Cantidadpersonas,
+                    ChicosYEdad = request.ChicosYEdad,
+                    DisponibilidadHoraria = request.DisponibilidadHoraria,
+                    Emergencia = request.Emergencia,
+                    Expectativa = request.Expectativa,
+                    ExperienciaDeTransito = request.ExperienciaDeTransito,
+                    HayMascotas = request.HayMascotas,
+                    ManejoAnimal = request.ManejoAnimal,
+                    MedioDeTransporte = request.MedioDeTransporte,
+                    PoliticaOrganizacion = request.PoliticaOrganizacion,
+                    PropietarioInquilino = request.PropietarioInquilino,
+                    RazonInteres = request.RazonInteres,
+                    Rutina = request.Rutina,
+                    Seguimiento = request.Seguimiento,
+                    TiempoDeAcogida = request.TiempoDeAcogida,
+                    TipoDeEspacio = request.TipoDeEspacio,
+                    VacunadosCastrados = request.VacunadosCastrados,
+
+                };
+                var result = await _command.CreateTramiteTransito(tramiteTransito);
+
+                return await _mapper.TramiteTransitoResponse(result);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<TramiteAdopcionResponse> UpdateTramiteAdopcion(UpdateTramiteAdopcionRequest request)
+        {
+            try
+            {
+
+                var adopcionUpdated = await _command.UpdateTramiteAdopcion(request);
+                return await _mapper.TramiteAdopcionResponse(adopcionUpdated);
 
             }
             catch (ExceptionNotFound e)
@@ -42,7 +124,47 @@ namespace Application.UseCases
 
                 throw new ExceptionNotFound(e.Message);
             }
-            
+        }
+        public async Task<TramiteTransitoResponse> UpdateTramiteTransito(UpdateTramiteTransitoRequest request)
+        {
+            try
+            {
+                var transitoUpdated = await _command.UpdateTramiteTransito(request);
+                return await _mapper.TramiteTransitoResponse(transitoUpdated);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<List<TramiteResponse>> GetAllTramitesByFilters(int? estadoTramiteId, int? animalId)
+        {
+            try
+            {
+                if (estadoTramiteId == null && animalId == null)
+                {
+                    return await _mapper.GetTramitesResponse(await _query.GetTramites());
+                }
+                if (estadoTramiteId < 1 || estadoTramiteId > 3)
+                {
+                    throw new ExceptionNotFound("No existe tramite con ese estado");
+                }
+                if (!await CheckAnimalId((int)animalId))
+                {
+                    throw new ExceptionNotFound("No existe ese Tramite con ese Id de animal");
+                }
+                var tramites = await _query.GetTramitesFilters(estadoTramiteId, animalId);
+                return await _mapper.GetTramitesResponse(tramites);
+
+            }
+            catch (ExceptionNotFound e)
+            {
+
+                throw new ExceptionNotFound(e.Message);
+            }
+
         }
 
         public async Task<TramiteResponse> GetTramiteById(int id)
@@ -54,23 +176,7 @@ namespace Application.UseCases
                     throw new ExceptionNotFound("No existe ese tramite");
                 }
                 var tramite = await _query.GetTramiteById(id);
-                return await _mapper.TramiteResponse(tramite);
-            }
-            catch (ExceptionNotFound e)
-            {
 
-                throw new ExceptionNotFound(e.Message);
-            }
-        }
-        public async Task<TramiteResponse> GetTramiteByAnimalId(int id)
-        {
-            try
-            {
-                if (!await CheckAnimalId(id))
-                {
-                    throw new ExceptionNotFound("No existe ese Tramite con ese Id de animal");
-                }
-                var tramite = await _query.GetTramiteById(id);
                 return await _mapper.TramiteResponse(tramite);
             }
             catch (ExceptionNotFound e)
@@ -84,27 +190,16 @@ namespace Application.UseCases
         {
             try
             {
-                if (!await CheckTipo(request.TramiteTipoId))
-                {
-                    throw new Conflict("Ingreso un tipo de tramite incorrecto");
-                }
-                var tramite = new Tramite
+                var tramite = new CabeceraTramite
                 {
                     UsuarioId = request.UsuarioId,
-                    UsuarioAdoptanteId = request.UsuarioAdoptante,
-                    TramiteTipoId = request.TramiteTipoId,
+                    UsuarioAdoptanteId = request.UsuarioAdoptanteId,
+                    FechaInicio = request.FechaInicio,
+                    FechaFinal = request.FechaFinal,
+                    EstadoId = request.EstadoId,
                     AnimalId = request.AnimalId,
-                    TramiteEstadoId = 2,
-                    Chicos = request.HayChicos,
-                    EdadHijoMenor = request.EdadHijoMenor,
-                    Cantidadpersonas = request.Cantidadpersonas,
-                    HayAnimales = request.HayAnimales,
-                    Vacunados = request.Vacunados,
-                    Castrados = request.Castrados,
-                    AireLibre = request.AireLibre,
-                    MotivoAdopcion = request.MotivoAdopcion,
-                    HorasSolo = request.HorasSolo,
-                    FechaInicio = DateTime.Now,
+                    TramiteAdopcionId = request.TramiteAdopcionId,
+                    TramiteTransitoId = request.TramiteTransitoId,
                 };
                 var result = await _command.CreateTramite(tramite);
                 return await _mapper.TramiteResponse(await _query.GetTramiteById(result.Id));
@@ -124,14 +219,7 @@ namespace Application.UseCases
                 {
                     throw new ExceptionNotFound("No existe ese tramite");
                 }
-                if (!await CheckEstado(request))
-                {
-                    throw new ExceptionNotFound("No existe ese estado");
-                }
-                if (!await CheckTipo(request.TramiteTipoId))
-                {
-                    throw new ExceptionNotFound("No existe ese tipo");
-                }
+
                 var tramiteUpdated = await _command.UpdateTramite(request);
                 return await _mapper.UpdateTramiteResponse(tramiteUpdated);
             }
@@ -147,7 +235,7 @@ namespace Application.UseCases
             try
             {
                 var tramite = await _query.GetTramites();
-                List<Tramite> lista = new List<Tramite>();
+                List<CabeceraTramite> lista = new List<CabeceraTramite>();
                 foreach (var item in tramite)
                 {
                     if (item.FechaInicio.Month == dateTime.Month && item.FechaInicio.Year == dateTime.Year)
@@ -155,28 +243,18 @@ namespace Application.UseCases
                         lista.Add(item);
                     }
                 }
-                if (lista.Count==0)
+                if (lista.Count == 0)
                 {
                     throw new ExceptionNotFound("No hubieron tramites en el mes ingresado");
                 }
                 return await _mapper.TramiteByMonthResponse(lista);
-                
+
             }
             catch (ExceptionNotFound e)
             {
 
                 throw new ExceptionNotFound(e.Message);
             }
-        }
-
-        private async Task<bool> CheckEstado(UpdateTramiteRequest request)
-        {
-            return (await _estadoservice.GetTramiteEstadoResponseById(request.TramiteEstadoId) != null);
-        }
-
-        private async Task<bool> CheckTipo(int id)
-        {
-            return (await _tipoService.GetTramiteTipoResponseById(id) != null);
         }
 
         private async Task<bool> CheckTramite(int id)

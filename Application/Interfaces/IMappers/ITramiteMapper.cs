@@ -5,9 +5,19 @@ namespace Application.Interfaces.IMappers
 {
     public interface ITramiteMapper
     {
-        Task<TramiteResponse> TramiteResponse(Tramite tramite);
-        Task<UpdateTramiteResponse> UpdateTramiteResponse(Tramite tramite);
-        Task<TramiteByMonthResponse> TramiteByMonthResponse(List<Tramite> tramites);
-        Task<List<TramiteResponse>> GetTramitesByEstadoResponse(List<Tramite> tramites);
+        Task<TramiteResponse> TramiteResponse(CabeceraTramite tramite);
+        Task<TramiteAdopcionResponse> TramiteAdopcionResponse(TramiteAdopcion tramiteAdopcion);
+        Task<TramiteTransitoResponse> TramiteTransitoResponse(TramiteTransito tramiteTransito);
+
+
+        Task<List<TramiteResponse>> GetTramitesResponse(List<CabeceraTramite> tramites);
+        Task<List<TramiteResponse>> GetTramitesAdopcionResponse(List<TramiteAdopcion> tramitesAdopcion);
+        Task<List<TramiteResponse>> GetTramitesTransitoResponse(List<TramiteTransito> tramitesTransito);
+
+        Task<UpdateTramiteResponse> UpdateTramiteResponse(CabeceraTramite tramite);
+        Task<TramiteByMonthResponse> TramiteByMonthResponse(List<CabeceraTramite> tramites);
+
+
+
     }
 }

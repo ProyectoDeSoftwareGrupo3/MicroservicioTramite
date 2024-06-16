@@ -5,7 +5,9 @@ namespace Application.Interfaces.IMappers
 {
     public interface ITramiteTipoMapper
     {
-        Task<List<GetAllTramiteTipoResponse>> GetTramiteTipos(List<TramiteTipo> tipos);
-        Task<GetAllTramiteTipoResponse> TramiteTipoResponse(TramiteTipo tipo);
+        Task<List<TramiteAdopcionResponse>> GetTramiteAdopciones(List<TramiteAdopcion> adopciones);
+        Task<TramiteAdopcionResponse> TramiteAdopcionResponse(TramiteAdopcion adopcion);
+        Task<List<TramiteTransitoResponse>> GetTramiteTransitos(List<TramiteTransito> transitos);
+        Task<TramiteTransitoResponse> TramiteTransitoResponse(TramiteTransito transito);
     }
 }

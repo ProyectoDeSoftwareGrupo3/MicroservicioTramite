@@ -15,13 +15,14 @@ namespace Infrastructure.Query
             _context = context;
         }
 
-        public async Task<Tramite> GetTramiteById(int id)
+        public async Task<CabeceraTramite> GetTramiteById(int id)
         {
             try
             {
-                return await _context.Tramites
-                    .Include(t => t.TramiteEstado)
-                    .Include(t => t.TramiteTipo)
+                return await _context.CabeceraTramites
+                    .Include(ct => ct.TramiteTransito)
+                    .Include(ct => ct.TramiteAdopcion)
+                    .Include(ct => ct.Estado)
                     .FirstOrDefaultAsync(t => t.Id == id);
 
             }
@@ -30,13 +31,14 @@ namespace Infrastructure.Query
                 throw new Conflict("Hubo un error en la base de datos");
             }
         }
-        public async Task<Tramite> GetTramiteByAnimalId(int id)
+        public async Task<CabeceraTramite> GetTramiteByAnimalId(int id)
         {
             try
             {
-                return await _context.Tramites
-                    .Include(t => t.TramiteEstado)
-                    .Include(t => t.TramiteTipo)
+                return await _context.CabeceraTramites
+                    .Include(t => t.TramiteTransito)
+                    .Include(t => t.TramiteAdopcion)
+                    .Include(ct => ct.Estado)
                     .FirstOrDefaultAsync(t => t.AnimalId == id);
 
             }
@@ -46,22 +48,33 @@ namespace Infrastructure.Query
             }
         }
 
-        public async Task<List<Tramite>>GetTramitesByEstado(int? tramiteEstado)
+        public async Task<List<CabeceraTramite>> GetTramitesFilters(int? tramiteEstado, int? animalId)
         {
             try
             {
+                if (tramiteEstado == null && animalId == null)
+                {
+                    return await _context.CabeceraTramites
+                        .Include(ct => ct.Estado)
+                        .Include(t => t.TramiteTransito)
+                        .Include(t => t.TramiteAdopcion)
+                        .ToListAsync();
+                }
                 if (tramiteEstado == null)
                 {
-                    return await _context.Tramites
-                        .Include(t => t.TramiteEstado)
-                        .Include(t => t.TramiteTipo)
+                    return await _context.CabeceraTramites
+                        .Where(t => t.AnimalId == animalId)
+                        .Include(t => t.Estado)
+                        .Include(t => t.TramiteTransito)
+                        .Include(t => t.TramiteAdopcion)
                         .ToListAsync();
                 }
 
-                return await _context.Tramites
-                        .Where(t => t.TramiteEstadoId == tramiteEstado)
-                        .Include(t => t.TramiteEstado)
-                        .Include(t => t.TramiteTipo)
+                return await _context.CabeceraTramites
+                        .Where(t => t.EstadoId == tramiteEstado)
+                        .Include(t => t.Estado)
+                        .Include(t => t.TramiteTransito)
+                        .Include(t => t.TramiteAdopcion)
                         .ToListAsync();
             }
             catch (DbException)
@@ -70,11 +83,15 @@ namespace Infrastructure.Query
             }
         }
 
-        public async Task<List<Tramite>> GetTramites()
+        public async Task<List<CabeceraTramite>> GetTramites()
         {
             try
             {
-                return await _context.Tramites.ToListAsync();
+                return await _context.CabeceraTramites
+                    .Include(t => t.Estado)
+                    .Include(t => t.TramiteTransito)
+                    .Include(t => t.TramiteAdopcion)
+                    .ToListAsync();
             }
             catch (DbException)
             {

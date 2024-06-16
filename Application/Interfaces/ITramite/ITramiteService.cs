@@ -6,10 +6,16 @@ namespace Application.Interfaces.ITramite
     public interface ITramiteService
     {
         Task<TramiteResponse> CreateTramite(TramiteRequest request);
+        Task<TramiteAdopcionResponse> CreateTramiteAdopcion(TramiteAdopcionRequest request);
+        Task<TramiteTransitoResponse> CreateTramiteTransito(TramiteTransitoRequest request);
+
         Task<UpdateTramiteResponse> UpdateTramite(UpdateTramiteRequest request);
+        Task<TramiteAdopcionResponse> UpdateTramiteAdopcion(UpdateTramiteAdopcionRequest request);
+        Task<TramiteTransitoResponse> UpdateTramiteTransito(UpdateTramiteTransitoRequest request);
+
         Task<TramiteResponse> GetTramiteById(int id);
-        Task<TramiteResponse> GetTramiteByAnimalId(int id);
         Task<TramiteByMonthResponse> GetTramiteByMonth(DateTime dateTime);
-        Task<List<TramiteResponse>> GetAllTramitesByEstadoId(int? estadoTramiteId);
+        Task<List<TramiteResponse>> GetAllTramitesByFilters(int? estadoTramiteId, int? animalId);
+        Task<TramiteResponse> DeleteTramite(int Id);
     }
 }

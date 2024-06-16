@@ -5,7 +5,14 @@ namespace Application.Interfaces.ITramite
 {
     public interface ITramiteCommand
     {
-        Task<Tramite> CreateTramite(Tramite tramite);
-        Task<Tramite> UpdateTramite(UpdateTramiteRequest request);
+        Task<CabeceraTramite> CreateTramite(CabeceraTramite tramite);
+        Task<TramiteAdopcion> CreateTramiteAdopcion(TramiteAdopcion tramiteAdopcion);
+        Task<TramiteTransito> CreateTramiteTransito(TramiteTransito tramiteTransito);
+        Task<CabeceraTramite> UpdateTramite(UpdateTramiteRequest request);
+        Task<TramiteTransito> UpdateTramiteTransito(UpdateTramiteTransitoRequest request);
+        Task<TramiteAdopcion> UpdateTramiteAdopcion(UpdateTramiteAdopcionRequest request);
+        Task<CabeceraTramite> DeleteTramite(int id);
+
+
     }
 }
