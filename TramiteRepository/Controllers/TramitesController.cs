@@ -2,13 +2,14 @@
 using Application.Interfaces.ITramite;
 using Application.Request;
 using Application.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TramiteRepository.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-//[Authorize]
+[Authorize]
 public class TramitesController : ControllerBase
 {
 
