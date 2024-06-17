@@ -159,6 +159,7 @@ public class TramitesController : ControllerBase
     [HttpGet("Thismonth")]
     [ProducesResponseType(typeof(TramiteResponse), 200)]
     [ProducesResponseType(typeof(ExceptionMessage), 404)]
+    [Authorize]
     public async Task<IActionResult> GetTramiteByMonth()
     {
         try
