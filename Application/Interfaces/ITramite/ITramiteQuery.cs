@@ -8,5 +8,6 @@ namespace Application.Interfaces.ITramite
         Task<List<CabeceraTramite>> GetTramites();
         Task<List<CabeceraTramite>> GetTramitesFilters(int? tramiteEstado, int? animalId);
         Task<CabeceraTramite> GetTramiteByAnimalId(int id);
+        Task<IEnumerable<CabeceraTramite>> GetAllAsync();
     }
 }

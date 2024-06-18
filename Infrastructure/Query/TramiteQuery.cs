@@ -98,5 +98,10 @@ namespace Infrastructure.Query
                 throw new Conflict("Hubo un error en la base de datos");
             }
         }
+
+        public async Task<IEnumerable<CabeceraTramite>> GetAllAsync()
+        {
+            return await _context.CabeceraTramites.ToListAsync();
+        }
     }
 }

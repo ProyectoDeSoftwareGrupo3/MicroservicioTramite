@@ -257,6 +257,22 @@ namespace Application.UseCases
             }
         }
 
+        public async Task<int[]> GetTramiteCountPerMonthAsync(int year)
+        {
+            var tramites = await _query.GetAllAsync();
+            var counts = new int[12];
+
+            foreach (var tramite in tramites)
+            {
+                if (tramite.FechaInicio.Year == year)
+                {
+                    counts[tramite.FechaInicio.Month - 1]++;
+                }
+            }
+
+            return counts;
+        }
+
         private async Task<bool> CheckTramite(int id)
         {
             return (await _query.GetTramiteById(id) != null);

@@ -17,5 +17,6 @@ namespace Application.Interfaces.ITramite
         Task<TramiteByMonthResponse> GetTramiteByMonth(DateTime dateTime);
         Task<List<TramiteResponse>> GetAllTramitesByFilters(int? estadoTramiteId, int? animalId);
         Task<TramiteResponse> DeleteTramite(int Id);
+        Task<int[]> GetTramiteCountPerMonthAsync(int year);
     }
 }

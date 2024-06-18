@@ -190,6 +190,13 @@ public class TramitesController : ControllerBase
         }
     }
 
+    [HttpGet("GetTramiteCountPerMonth/{year}")]
+    public async Task<IActionResult> GetTramiteCountPerMonth(int year)
+    {
+        var result = await _tramiteService.GetTramiteCountPerMonthAsync(year);
+        return Ok(result);
+    }
+
 
 
 }
