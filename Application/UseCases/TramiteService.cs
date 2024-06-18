@@ -48,6 +48,7 @@ namespace Application.UseCases
         {
             try
             {
+                var CabeceraTramite = await CreateTramite(request.UsuarioId, request.UsuarioAdoptanteId, request.AnimalId);
                 var tramiteAdopcion = new TramiteAdopcion
                 {
                     AireLibre = request.AireLibre,
@@ -61,6 +62,7 @@ namespace Application.UseCases
                     PaseoXMes = request.PaseoXMes,
                     PropietarioInquilino = request.PropietarioInquilino,
                     Vacunados = request.Vacunados,
+                    CabeceraTramiteId = CabeceraTramite.Id                    
                 };
                 var result = await _command.CreateTramiteAdopcion(tramiteAdopcion);
 
@@ -77,6 +79,8 @@ namespace Application.UseCases
         {
             try
             {
+                var CabeceraTramite = CreateTramite(request.UsuarioId, request.UsuarioAdoptanteId, request.AnimalId);                
+
                 var tramiteTransito = new TramiteTransito
                 {
                     ActitudHaciaAnimales = request.ActitudHaciaAnimales,
@@ -97,7 +101,7 @@ namespace Application.UseCases
                     TiempoDeAcogida = request.TiempoDeAcogida,
                     TipoDeEspacio = request.TipoDeEspacio,
                     VacunadosCastrados = request.VacunadosCastrados,
-
+                    CabeceraTramiteId = CabeceraTramite.Id
                 };
                 var result = await _command.CreateTramiteTransito(tramiteTransito);
 
@@ -186,20 +190,17 @@ namespace Application.UseCases
             }
         }
 
-        public async Task<TramiteResponse> CreateTramite(TramiteRequest request)
+        public async Task<TramiteResponse> CreateTramite(Guid UsuarioId, Guid UsuarioSolicitanteId, int AnimalId)
         {
             try
             {
                 var tramite = new CabeceraTramite
                 {
-                    UsuarioId = request.UsuarioId,
-                    UsuarioAdoptanteId = request.UsuarioAdoptanteId,
-                    FechaInicio = request.FechaInicio,
-                    FechaFinal = request.FechaFinal,
-                    EstadoId = request.EstadoId,
-                    AnimalId = request.AnimalId,
-                    TramiteAdopcionId = request.TramiteAdopcionId,
-                    TramiteTransitoId = request.TramiteTransitoId,
+                    UsuarioId = UsuarioId,
+                    UsuarioAdoptanteId = UsuarioSolicitanteId,
+                    FechaInicio = DateTime.Now,
+                    EstadoId = 2,
+                    AnimalId = AnimalId                    
                 };
                 var result = await _command.CreateTramite(tramite);
                 return await _mapper.TramiteResponse(await _query.GetTramiteById(result.Id));

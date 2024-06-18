@@ -24,7 +24,8 @@ namespace Application.Mappers
                     MotivoAdopcion = item.MotivoAdopcion,
                     PaseoXMes = item.PaseoXMes,
                     PropietarioInquilino = item.PropietarioInquilino,
-                    Vacunados = item.Vacunados
+                    Vacunados = item.Vacunados,
+                    CabeceraTramiteId = item.CabeceraTramiteId
                 };
                 list.Add(response);
             }
@@ -46,7 +47,8 @@ namespace Application.Mappers
                 MotivoAdopcion = adopcion.MotivoAdopcion,
                 PaseoXMes = adopcion.PaseoXMes,
                 PropietarioInquilino = adopcion.PropietarioInquilino,
-                Vacunados = adopcion.Vacunados
+                Vacunados = adopcion.Vacunados,
+                CabeceraTramiteId = adopcion.CabeceraTramiteId
             };
             return Task.FromResult(response);
         }
@@ -75,7 +77,8 @@ namespace Application.Mappers
                     Seguimiento = item.Seguimiento,
                     TiempoDeAcogida = item.TiempoDeAcogida,
                     TipoDeEspacio = item.TipoDeEspacio,
-                    VacunadosCastrados = item.VacunadosCastrados
+                    VacunadosCastrados = item.VacunadosCastrados,
+                    CabeceraTramiteId = item.CabeceraTramiteId
                 };
                 list.Add(response);
             }
@@ -104,7 +107,8 @@ namespace Application.Mappers
                 Seguimiento = transito.Seguimiento,
                 TiempoDeAcogida = transito.TiempoDeAcogida,
                 TipoDeEspacio = transito.TipoDeEspacio,
-                VacunadosCastrados = transito.VacunadosCastrados
+                VacunadosCastrados = transito.VacunadosCastrados,
+                CabeceraTramiteId = transito.CabeceraTramiteId
             };
 
             return Task.FromResult(response);

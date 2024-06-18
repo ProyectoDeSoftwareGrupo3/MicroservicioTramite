@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(TramiteDbContext))]
-    [Migration("20240614004948_inicial")]
-    partial class inicial
+    [Migration("20240618195555_TramitesActualizados")]
+    partial class TramitesActualizados
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,12 +45,6 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("FechaInicio")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("TramiteAdopcionId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("TramiteTransitoId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("UsuarioAdoptanteId")
                         .HasColumnType("uniqueidentifier");
 
@@ -61,14 +55,6 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("EstadoId");
 
-                    b.HasIndex("TramiteAdopcionId")
-                        .IsUnique()
-                        .HasFilter("[TramiteAdopcionId] IS NOT NULL");
-
-                    b.HasIndex("TramiteTransitoId")
-                        .IsUnique()
-                        .HasFilter("[TramiteTransitoId] IS NOT NULL");
-
                     b.ToTable("CabeceraTramite", (string)null);
 
                     b.HasData(
@@ -78,54 +64,49 @@ namespace Infrastructure.Migrations
                             AnimalId = 1,
                             EstadoId = 2,
                             FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TramiteAdopcionId = new Guid("54af2b5e-b9fb-405e-8520-3d79af6b1a8d"),
-                            UsuarioAdoptanteId = new Guid("07c32251-5f12-4cfb-b8b6-25fbbfb3b883"),
-                            UsuarioId = new Guid("d3bb6c68-0b36-47f8-872d-cb364441f773")
+                            FechaInicio = new DateTime(2024, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UsuarioAdoptanteId = new Guid("e6fbddc1-85d1-404d-9126-e5541bd58215"),
+                            UsuarioId = new Guid("726d8bfe-ac8c-44b6-a36a-f8ad3c37d9da")
                         },
                         new
                         {
                             Id = 2,
-                            AnimalId = 1,
+                            AnimalId = 2,
                             EstadoId = 2,
                             FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TramiteAdopcionId = new Guid("7e6066d1-7754-44e7-9758-706bdc60a88a"),
-                            UsuarioAdoptanteId = new Guid("f3f4e412-04c1-4af1-8f4f-9a320cc6b4fc"),
-                            UsuarioId = new Guid("8441c475-e0b6-4ec1-88d6-b8fc8f4a309b")
+                            FechaInicio = new DateTime(2024, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UsuarioAdoptanteId = new Guid("835dea1a-fbed-4fa7-b93e-3236aeef016e"),
+                            UsuarioId = new Guid("4b3164a6-3ed2-4649-8d2f-3f4ad9082404")
                         },
                         new
                         {
                             Id = 3,
-                            AnimalId = 1,
-                            EstadoId = 2,
-                            FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TramiteAdopcionId = new Guid("e2780dbb-17dc-44dd-97f0-4a01a5b4ae86"),
-                            UsuarioAdoptanteId = new Guid("9c91b132-b88b-4824-9991-3ce69155e6ab"),
-                            UsuarioId = new Guid("c0c5f5d8-006c-4b59-b4d7-70c3b04871d0")
+                            AnimalId = 3,
+                            EstadoId = 1,
+                            FechaFinal = new DateTime(2024, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FechaInicio = new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UsuarioAdoptanteId = new Guid("af950ea6-1217-464c-87b4-f24edad2a0b1"),
+                            UsuarioId = new Guid("0a74eb49-e078-4999-9d2b-bf522ca7ec76")
                         },
                         new
                         {
                             Id = 4,
-                            AnimalId = 1,
-                            EstadoId = 2,
-                            FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AnimalId = 4,
+                            EstadoId = 1,
+                            FechaFinal = new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TramiteTransitoId = new Guid("74730c71-9150-42d9-a087-56bbccad1c79"),
-                            UsuarioAdoptanteId = new Guid("06dd8e49-b48e-4362-8c75-ab7304f05284"),
-                            UsuarioId = new Guid("bc348cff-61d6-4063-8a3a-3f6619b34127")
+                            UsuarioAdoptanteId = new Guid("c3042df8-6748-4378-908a-cde9c6f7a954"),
+                            UsuarioId = new Guid("0518c7d3-4332-46df-8cb5-0db4d51c81b6")
                         },
                         new
                         {
                             Id = 5,
-                            AnimalId = 1,
-                            EstadoId = 2,
-                            FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AnimalId = 5,
+                            EstadoId = 3,
+                            FechaFinal = new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TramiteTransitoId = new Guid("5c0c5be5-f32d-4743-87ab-9f025c09811f"),
-                            UsuarioAdoptanteId = new Guid("38fbe731-341e-412f-a9ad-f6d3dd41aef3"),
-                            UsuarioId = new Guid("991bbb4e-ebca-4c37-9bf5-fd2a2b7e663b")
+                            UsuarioAdoptanteId = new Guid("4ead837a-2562-4a69-9e49-e43649333386"),
+                            UsuarioId = new Guid("ce3023ac-1523-49be-a71d-315d6a38ae02")
                         });
                 });
 
@@ -138,6 +119,9 @@ namespace Infrastructure.Migrations
                     b.Property<string>("AireLibre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CabeceraTramiteId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CantidadPersonas")
                         .HasColumnType("int");
@@ -172,6 +156,9 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("TramiteId");
 
+                    b.HasIndex("CabeceraTramiteId")
+                        .IsUnique();
+
                     b.ToTable("TramiteAdopcion", (string)null);
 
                     b.HasData(
@@ -179,6 +166,7 @@ namespace Infrastructure.Migrations
                         {
                             TramiteId = new Guid("54af2b5e-b9fb-405e-8520-3d79af6b1a8d"),
                             AireLibre = "Patio",
+                            CabeceraTramiteId = 1,
                             CantidadPersonas = 4,
                             Castrados = true,
                             EdadHijoMenor = 10,
@@ -194,6 +182,7 @@ namespace Infrastructure.Migrations
                         {
                             TramiteId = new Guid("7e6066d1-7754-44e7-9758-706bdc60a88a"),
                             AireLibre = "Patio",
+                            CabeceraTramiteId = 2,
                             CantidadPersonas = 5,
                             Castrados = true,
                             EdadHijoMenor = 10,
@@ -209,6 +198,7 @@ namespace Infrastructure.Migrations
                         {
                             TramiteId = new Guid("e2780dbb-17dc-44dd-97f0-4a01a5b4ae86"),
                             AireLibre = "Jardín",
+                            CabeceraTramiteId = 3,
                             CantidadPersonas = 2,
                             Castrados = true,
                             HayChicos = false,
@@ -223,6 +213,7 @@ namespace Infrastructure.Migrations
                         {
                             TramiteId = new Guid("d0940fb6-b3a3-4c14-ad0c-d565be450f1c"),
                             AireLibre = "Patio grande",
+                            CabeceraTramiteId = 4,
                             CantidadPersonas = 6,
                             Castrados = false,
                             EdadHijoMenor = 12,
@@ -279,6 +270,9 @@ namespace Infrastructure.Migrations
                     b.Property<string>("ActitudHaciaAnimales")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CabeceraTramiteId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Cantidadpersonas")
                         .HasColumnType("int");
@@ -349,97 +343,10 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("TramiteId");
 
-                    b.ToTable("TramiteTransito", (string)null);
+                    b.HasIndex("CabeceraTramiteId")
+                        .IsUnique();
 
-                    b.HasData(
-                        new
-                        {
-                            TramiteId = new Guid("74730c71-9150-42d9-a087-56bbccad1c79"),
-                            ActitudHaciaAnimales = "A",
-                            Cantidadpersonas = 4,
-                            ChicosYEdad = "A",
-                            DisponibilidadHoraria = "A",
-                            Emergencia = "A",
-                            Expectativa = "A",
-                            ExperienciaDeTransito = "A",
-                            HayMascotas = "A",
-                            ManejoAnimal = "A",
-                            MedioDeTransporte = "A",
-                            PoliticaOrganizacion = "A",
-                            PropietarioInquilino = "A",
-                            RazonInteres = "A",
-                            Rutina = "A",
-                            Seguimiento = "A",
-                            TiempoDeAcogida = "A",
-                            TipoDeEspacio = "A",
-                            VacunadosCastrados = "A"
-                        },
-                        new
-                        {
-                            TramiteId = new Guid("5c0c5be5-f32d-4743-87ab-9f025c09811f"),
-                            ActitudHaciaAnimales = "B ",
-                            Cantidadpersonas = 4,
-                            ChicosYEdad = " B",
-                            DisponibilidadHoraria = "B ",
-                            Emergencia = "B ",
-                            Expectativa = "B ",
-                            ExperienciaDeTransito = "B",
-                            HayMascotas = " B",
-                            ManejoAnimal = "B ",
-                            MedioDeTransporte = "B ",
-                            PoliticaOrganizacion = "B ",
-                            PropietarioInquilino = "B ",
-                            RazonInteres = "B",
-                            Rutina = "B ",
-                            Seguimiento = "B ",
-                            TiempoDeAcogida = "B ",
-                            TipoDeEspacio = "B ",
-                            VacunadosCastrados = "B "
-                        },
-                        new
-                        {
-                            TramiteId = new Guid("60d354f6-375b-4c3f-a94b-8aaed89303d4"),
-                            ActitudHaciaAnimales = " C",
-                            Cantidadpersonas = 4,
-                            ChicosYEdad = " C",
-                            DisponibilidadHoraria = "C ",
-                            Emergencia = "C ",
-                            Expectativa = "C ",
-                            ExperienciaDeTransito = " C",
-                            HayMascotas = " C",
-                            ManejoAnimal = "C ",
-                            MedioDeTransporte = " C",
-                            PoliticaOrganizacion = "C ",
-                            PropietarioInquilino = "C ",
-                            RazonInteres = " C",
-                            Rutina = "C ",
-                            Seguimiento = " C",
-                            TiempoDeAcogida = "C ",
-                            TipoDeEspacio = "C ",
-                            VacunadosCastrados = "C "
-                        },
-                        new
-                        {
-                            TramiteId = new Guid("a7e82c64-529e-4add-a922-7f845d306eb6"),
-                            ActitudHaciaAnimales = "D ",
-                            Cantidadpersonas = 4,
-                            ChicosYEdad = "D ",
-                            DisponibilidadHoraria = "D ",
-                            Emergencia = "D ",
-                            Expectativa = "D ",
-                            ExperienciaDeTransito = "D ",
-                            HayMascotas = "D ",
-                            ManejoAnimal = "D ",
-                            MedioDeTransporte = " D",
-                            PoliticaOrganizacion = "D ",
-                            PropietarioInquilino = "D ",
-                            RazonInteres = " D",
-                            Rutina = "D ",
-                            Seguimiento = "D ",
-                            TiempoDeAcogida = "D ",
-                            TipoDeEspacio = "D ",
-                            VacunadosCastrados = "D "
-                        });
+                    b.ToTable("TramiteTransito", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.CabeceraTramite", b =>
@@ -450,36 +357,43 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.TramiteAdopcion", "TramiteAdopcion")
-                        .WithOne("CabeceraTramite")
-                        .HasForeignKey("Domain.Entities.CabeceraTramite", "TramiteAdopcionId");
-
-                    b.HasOne("Domain.Entities.TramiteTransito", "TramiteTransito")
-                        .WithOne("CabeceraTramite")
-                        .HasForeignKey("Domain.Entities.CabeceraTramite", "TramiteTransitoId");
-
                     b.Navigation("Estado");
-
-                    b.Navigation("TramiteAdopcion");
-
-                    b.Navigation("TramiteTransito");
                 });
 
             modelBuilder.Entity("Domain.Entities.TramiteAdopcion", b =>
                 {
-                    b.Navigation("CabeceraTramite")
+                    b.HasOne("Domain.Entities.CabeceraTramite", "CabeceraTramite")
+                        .WithOne("TramiteAdopcion")
+                        .HasForeignKey("Domain.Entities.TramiteAdopcion", "CabeceraTramiteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CabeceraTramite");
+                });
+
+            modelBuilder.Entity("Domain.Entities.TramiteTransito", b =>
+                {
+                    b.HasOne("Domain.Entities.CabeceraTramite", "CabeceraTramite")
+                        .WithOne("TramiteTransito")
+                        .HasForeignKey("Domain.Entities.TramiteTransito", "CabeceraTramiteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CabeceraTramite");
+                });
+
+            modelBuilder.Entity("Domain.Entities.CabeceraTramite", b =>
+                {
+                    b.Navigation("TramiteAdopcion")
+                        .IsRequired();
+
+                    b.Navigation("TramiteTransito")
                         .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Entities.TramiteEstado", b =>
                 {
                     b.Navigation("CabeceraTramite");
-                });
-
-            modelBuilder.Entity("Domain.Entities.TramiteTransito", b =>
-                {
-                    b.Navigation("CabeceraTramite")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

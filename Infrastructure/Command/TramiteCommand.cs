@@ -138,9 +138,7 @@ namespace Infrastructure.Command
                 tramiteUpdated.EstadoId = request.EstadoId;
                 tramiteUpdated.FechaFinal = request.FechaFinal;
                 tramiteUpdated.FechaInicio = request.FechaInicio;
-
-                tramiteUpdated.TramiteTransitoId = request.TramiteTransitoId;
-                tramiteUpdated.TramiteAdopcionId = request.TramiteAdopcionId;
+                                
                 await _context.SaveChangesAsync();
                 return tramiteUpdated;
 

@@ -2,6 +2,11 @@
 {
     public class TramiteTransitoRequest
     {
+        //Cabecera 
+        public Guid UsuarioId { get; set; }
+        public Guid UsuarioAdoptanteId { get; set; }
+        public int AnimalId { get; set; }
+        //Cuerpo
         public string RazonInteres { get; set; }
         public string ExperienciaDeTransito { get; set; }
         public int Cantidadpersonas { get; set; }

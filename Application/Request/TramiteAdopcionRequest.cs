@@ -2,6 +2,11 @@
 {
     public class TramiteAdopcionRequest
     {
+        //Cabecera
+        public Guid UsuarioId { get; set; }
+        public Guid UsuarioAdoptanteId { get; set; }
+        public int AnimalId { get; set; }
+        //Cuerpo
         public int CantidadPersonas { get; set; }
         public bool HayChicos { get; set; }
         public int? EdadHijoMenor { get; set; }

@@ -20,5 +20,6 @@
         public string TiempoDeAcogida { get; set; }
         public string Expectativa { get; set; }
         public string PoliticaOrganizacion { get; set; }
+        public int CabeceraTramiteId { get; set; }
     }
 }

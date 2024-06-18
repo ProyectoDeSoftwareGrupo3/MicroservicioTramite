@@ -14,5 +14,6 @@
         public string MotivoAdopcion { get; set; }
         public int HorasSolo { get; set; }
         public int PaseoXMes { get; set; }
+        public int CabeceraTramiteId { get; set; }
     }
 }

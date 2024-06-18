@@ -17,6 +17,7 @@
 
 
 
-        public CabeceraTramite CabeceraTramite { get; set; } = null!;
+        public CabeceraTramite CabeceraTramite { get; set; }
+        public int CabeceraTramiteId { get; set; }
     }
 }

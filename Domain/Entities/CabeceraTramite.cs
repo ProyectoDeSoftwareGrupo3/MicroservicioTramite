@@ -13,11 +13,8 @@
         public TramiteEstado Estado { get; set; }
         public int EstadoId { get; set; }
 
-        public TramiteAdopcion? TramiteAdopcion { get; set; }
-        public Guid? TramiteAdopcionId { get; set; }
-
-        public TramiteTransito? TramiteTransito { get; set; }
-        public Guid? TramiteTransitoId { get; set; }
+        public TramiteAdopcion TramiteAdopcion { get; set; }
+        public TramiteTransito TramiteTransito { get; set; }        
 
     }
 }

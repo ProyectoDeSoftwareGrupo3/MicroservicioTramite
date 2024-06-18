@@ -5,7 +5,7 @@ namespace Application.Interfaces.ITramite
 {
     public interface ITramiteService
     {
-        Task<TramiteResponse> CreateTramite(TramiteRequest request);
+        Task<TramiteResponse> CreateTramite(Guid UsuarioId, Guid UsuarioSolicitante, int AnimalId);
         Task<TramiteAdopcionResponse> CreateTramiteAdopcion(TramiteAdopcionRequest request);
         Task<TramiteTransitoResponse> CreateTramiteTransito(TramiteTransitoRequest request);
 

@@ -20,40 +20,7 @@ public class TramitesController : ControllerBase
     }
 
 
-    [HttpPost]
-    [ProducesResponseType(typeof(TramiteResponse), 201)]
-    [ProducesResponseType(typeof(ExceptionMessage), 409)]
-    public async Task<IActionResult> CreateTramite(TramiteRequest request)
-    {
-        try
-        {
-            var result = await _tramiteService.CreateTramite(request);
-            return new JsonResult(result) { StatusCode = 201 };
-        }
-        catch (Conflict ex)
-        {
-
-            return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 409 };
-        }
-    }
-    [HttpDelete("{Id}")]
-    [ProducesResponseType(typeof(TramiteResponse), 200)]
-    [ProducesResponseType(typeof(ExceptionMessage), 409)]
-    public async Task<IActionResult> DeleteTramite(int Id)
-    {
-        try
-        {
-            var result = await _tramiteService.DeleteTramite(Id);
-            return new JsonResult(result) { StatusCode = 200 };
-        }
-        catch (Conflict ex)
-        {
-
-
-            return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 409 };
-        }
-    }
-
+    
     [HttpGet("{Id}")]
     [ProducesResponseType(typeof(TramiteResponse), 200)]
     [ProducesResponseType(typeof(ExceptionMessage), 404)]
@@ -70,23 +37,6 @@ public class TramitesController : ControllerBase
             return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
         }
     }
-    [HttpPut]
-    [ProducesResponseType(typeof(UpdateTramiteResponse), 200)]
-    [ProducesResponseType(typeof(ExceptionMessage), 404)]
-    public async Task<IActionResult> UpdateTramite(UpdateTramiteRequest request)
-    {
-        try
-        {
-            var result = await _tramiteService.UpdateTramite(request);
-            return new JsonResult(result) { StatusCode = 200 };
-        }
-        catch (ExceptionNotFound ex)
-        {
-
-            return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
-        }
-    }
-
 
     [HttpPost("Adopcion")]
     [ProducesResponseType(typeof(TramiteAdopcionResponse), 201)]

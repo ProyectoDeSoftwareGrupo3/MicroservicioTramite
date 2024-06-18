@@ -7,12 +7,7 @@
         public Guid UsuarioAdoptanteId { get; set; }
         public int AnimalId { get; set; }
         public DateTime FechaInicio { get; set; }
-        public DateTime FechaFinal { get; set; }
-
-        public TramiteAdopcionResponse? AdopcionResponse { get; set; } = null;
-        public TramiteTransitoResponse? TransitoResponse { get; set; } = null;
+        public DateTime FechaFinal { get; set; }        
         public GetAllTramiteEstadoResponse EstadoResponse { get; set; }
-
-
     }
 }

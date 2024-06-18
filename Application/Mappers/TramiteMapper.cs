@@ -48,9 +48,7 @@ namespace Application.Mappers
             List<TramiteResponse> listresponse = new List<TramiteResponse>();
             foreach (var tramite in tramites)
             {
-                if (tramite.TramiteTransito == null)
-                {
-                    var response = new TramiteResponse
+                var response = new TramiteResponse
                     {
                         Id = tramite.Id,
                         UsuarioId = tramite.UsuarioId,
@@ -59,30 +57,9 @@ namespace Application.Mappers
                         FechaFinal = tramite.FechaFinal,
                         FechaInicio = tramite.FechaInicio,
 
-                        EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),
-                        AdopcionResponse = await _tipoMapper.TramiteAdopcionResponse(tramite.TramiteAdopcion),
-
+                        EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado)
                     };
-                    listresponse.Add(response);
-                }
-                else
-                {
-                    var response = new TramiteResponse
-                    {
-                        Id = tramite.Id,
-                        UsuarioId = tramite.UsuarioId,
-                        UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
-                        AnimalId = tramite.AnimalId,
-                        FechaFinal = tramite.FechaFinal,
-                        FechaInicio = tramite.FechaInicio,
-
-                        EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),
-                        TransitoResponse = await _tipoMapper.TramiteTransitoResponse(tramite.TramiteTransito),
-
-                    };
-                    listresponse.Add(response);
-                }
-
+                    listresponse.Add(response);                
             }
             return listresponse;
         }
@@ -90,9 +67,7 @@ namespace Application.Mappers
         public async Task<TramiteResponse> TramiteResponse(CabeceraTramite tramite)
         {
             var response = new TramiteResponse();
-            if (tramite.TramiteTransito == null)
-            {
-                response = new TramiteResponse
+            response = new TramiteResponse
                 {
                     Id = tramite.Id,
                     UsuarioId = tramite.UsuarioId,
@@ -101,29 +76,8 @@ namespace Application.Mappers
                     FechaFinal = tramite.FechaFinal,
                     FechaInicio = tramite.FechaInicio,
 
-                    EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),
-                    AdopcionResponse = await _tipoMapper.TramiteAdopcionResponse(tramite.TramiteAdopcion),
-
-                };
-
-            }
-            else
-            {
-                response = new TramiteResponse
-                {
-                    Id = tramite.Id,
-                    UsuarioId = tramite.UsuarioId,
-                    UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
-                    AnimalId = tramite.AnimalId,
-                    FechaFinal = tramite.FechaFinal,
-                    FechaInicio = tramite.FechaInicio,
-
-                    EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),
-                    TransitoResponse = await _tipoMapper.TramiteTransitoResponse(tramite.TramiteTransito),
-
-                };
-
-            }
+                    EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),                    
+                };            
             return response;
         }
 
@@ -157,9 +111,8 @@ namespace Application.Mappers
                 PaseoXMes = tramiteAdopcion.PaseoXMes,
                 PropietarioInquilino = tramiteAdopcion.PropietarioInquilino,
                 TramiteId = tramiteAdopcion.TramiteId,
-                Vacunados = tramiteAdopcion.Vacunados
-
-
+                Vacunados = tramiteAdopcion.Vacunados,
+                CabeceraTramiteId = tramiteAdopcion.CabeceraTramiteId
             };
             return Task.FromResult(response);
         }
@@ -185,8 +138,8 @@ namespace Application.Mappers
                 Seguimiento = tramiteTransito.Seguimiento,
                 TiempoDeAcogida = tramiteTransito.TiempoDeAcogida,
                 TipoDeEspacio = tramiteTransito.TipoDeEspacio,
-                VacunadosCastrados = tramiteTransito.VacunadosCastrados
-
+                VacunadosCastrados = tramiteTransito.VacunadosCastrados,
+                CabeceraTramiteId = tramiteTransito.CabeceraTramiteId
             };
             return Task.FromResult(response);
         }
