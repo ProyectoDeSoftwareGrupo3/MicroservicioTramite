@@ -9,6 +9,7 @@
         public bool HayMascotas { get; set; }
         public bool Vacunados { get; set; }
         public bool Castrados { get; set; }
+        public string Lugar { get; set; }
         public bool PropietarioInquilino { get; set; }
         public string AireLibre { get; set; }
         public string MotivoAdopcion { get; set; }

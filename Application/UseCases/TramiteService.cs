@@ -60,6 +60,7 @@ namespace Application.UseCases
                     HorasSolo = request.HorasSolo,
                     MotivoAdopcion = request.MotivoAdopcion,
                     PaseoXMes = request.PaseoXMes,
+                    Lugar = request.Lugar,
                     PropietarioInquilino = request.PropietarioInquilino,
                     Vacunados = request.Vacunados,
                     CabeceraTramiteId = CabeceraTramite.Id                    

@@ -109,6 +109,7 @@ namespace Application.Mappers
                 HorasSolo = tramiteAdopcion.HorasSolo,
                 MotivoAdopcion = tramiteAdopcion.MotivoAdopcion,
                 PaseoXMes = tramiteAdopcion.PaseoXMes,
+                Lugar = tramiteAdopcion.Lugar,
                 PropietarioInquilino = tramiteAdopcion.PropietarioInquilino,
                 TramiteId = tramiteAdopcion.TramiteId,
                 Vacunados = tramiteAdopcion.Vacunados,
