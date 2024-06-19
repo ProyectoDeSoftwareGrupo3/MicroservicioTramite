@@ -133,8 +133,7 @@ namespace Infrastructure.Command
             {
                 var tramiteUpdated = _context.CabeceraTramites.FirstOrDefault(t => t.Id == request.Id);
                 tramiteUpdated.UsuarioId = request.UsuarioId;
-                tramiteUpdated.UsuarioAdoptanteId = request.UsuarioAdoptanteId;
-                tramiteUpdated.AnimalId = request.AnimalId;
+                tramiteUpdated.UsuarioSolicitanteId = request.UsuarioSolicitanteId;
                 tramiteUpdated.EstadoId = request.EstadoId;
                 tramiteUpdated.FechaFinal = request.FechaFinal;
                 tramiteUpdated.FechaInicio = request.FechaInicio;

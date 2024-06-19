@@ -4,12 +4,11 @@
     {
         //Cabecera 
         public Guid UsuarioId { get; set; }
-        public Guid UsuarioAdoptanteId { get; set; }
-        public int AnimalId { get; set; }
+        public Guid UsuarioSolicitanteId { get; set; }        
         //Cuerpo
         public string RazonInteres { get; set; }
         public string ExperienciaDeTransito { get; set; }
-        public int Cantidadpersonas { get; set; }
+        public string Cantidadpersonas { get; set; }
         public string ActitudHaciaAnimales { get; set; }
         public string ChicosYEdad { get; set; }
         public string HayMascotas { get; set; }

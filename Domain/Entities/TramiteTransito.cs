@@ -3,9 +3,10 @@
     public class TramiteTransito
     {
         public Guid TramiteId { get; set; }
+        public int CabeceraTramiteId { get; set; }
         public string RazonInteres { get; set; }
         public string ExperienciaDeTransito { get; set; }
-        public int Cantidadpersonas { get; set; }
+        public string Cantidadpersonas { get; set; }
         public string ActitudHaciaAnimales { get; set; }
         public string ChicosYEdad { get; set; }
         public string HayMascotas { get; set; }
@@ -21,9 +22,7 @@
         public string TiempoDeAcogida { get; set; }
         public string Expectativa { get; set; }
         public string PoliticaOrganizacion { get; set; }
-
-
         public CabeceraTramite CabeceraTramite { get; set; }
-        public int CabeceraTramiteId { get; set; }
+        
     }
 }

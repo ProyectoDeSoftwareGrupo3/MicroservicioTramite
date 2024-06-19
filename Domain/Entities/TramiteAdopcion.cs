@@ -3,6 +3,8 @@
     public class TramiteAdopcion
     {
         public Guid TramiteId { get; set; }
+        public int CabeceraTramiteId { get; set; }
+        public int AnimalId { get; set; }
         public int CantidadPersonas { get; set; }
         public bool HayChicos { get; set; }
         public int? EdadHijoMenor { get; set; }
@@ -15,10 +17,7 @@
         public string MotivoAdopcion { get; set; }
         public int HorasSolo { get; set; }
         public int PaseoXMes { get; set; }
-
-
-
         public CabeceraTramite CabeceraTramite { get; set; }
-        public int CabeceraTramiteId { get; set; }
+        
     }
 }

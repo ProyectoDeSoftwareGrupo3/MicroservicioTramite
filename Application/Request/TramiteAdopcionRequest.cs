@@ -4,7 +4,7 @@
     {
         //Cabecera
         public Guid UsuarioId { get; set; }
-        public Guid UsuarioAdoptanteId { get; set; }
+        public Guid UsuarioSolicitanteId { get; set; }
         public int AnimalId { get; set; }
         //Cuerpo
         public int CantidadPersonas { get; set; }

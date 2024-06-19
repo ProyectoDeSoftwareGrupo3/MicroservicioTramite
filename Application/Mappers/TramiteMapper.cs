@@ -52,8 +52,7 @@ namespace Application.Mappers
                     {
                         Id = tramite.Id,
                         UsuarioId = tramite.UsuarioId,
-                        UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
-                        AnimalId = tramite.AnimalId,
+                        UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
                         FechaFinal = tramite.FechaFinal,
                         FechaInicio = tramite.FechaInicio,
 
@@ -65,14 +64,12 @@ namespace Application.Mappers
         }
 
         public async Task<TramiteResponse> TramiteResponse(CabeceraTramite tramite)
-        {
-            var response = new TramiteResponse();
-            response = new TramiteResponse
+        {            
+            var response = new TramiteResponse
                 {
                     Id = tramite.Id,
                     UsuarioId = tramite.UsuarioId,
-                    UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
-                    AnimalId = tramite.AnimalId,
+                    UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
                     FechaFinal = tramite.FechaFinal,
                     FechaInicio = tramite.FechaInicio,
 
@@ -87,8 +84,7 @@ namespace Application.Mappers
             {
                 Id = tramite.Id,
                 UsuarioId = tramite.UsuarioId,
-                UsuarioAdoptanteId = tramite.UsuarioAdoptanteId,
-                AnimalId = tramite.AnimalId,
+                UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
                 FechaFinal = tramite.FechaFinal,
                 FechaInicio = tramite.FechaInicio,
                 EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado)
@@ -100,6 +96,7 @@ namespace Application.Mappers
         {
             var response = new TramiteAdopcionResponse
             {
+                AnimalId = tramiteAdopcion.AnimalId,
                 AireLibre = tramiteAdopcion.AireLibre,
                 CantidadPersonas = tramiteAdopcion.CantidadPersonas,
                 Castrados = tramiteAdopcion.Castrados,

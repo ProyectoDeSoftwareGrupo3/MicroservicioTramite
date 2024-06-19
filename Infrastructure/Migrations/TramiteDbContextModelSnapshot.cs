@@ -30,9 +30,6 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AnimalId")
-                        .HasColumnType("int");
-
                     b.Property<int>("EstadoId")
                         .HasColumnType("int");
 
@@ -42,10 +39,10 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("FechaInicio")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UsuarioAdoptanteId")
+                    b.Property<Guid>("UsuarioId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("UsuarioId")
+                    b.Property<Guid>("UsuarioSolicitanteId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -58,52 +55,47 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            AnimalId = 1,
                             EstadoId = 2,
                             FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioAdoptanteId = new Guid("185f2e1a-e95f-4c22-b6c3-c86d2a5d7638"),
-                            UsuarioId = new Guid("50303067-824d-4eb8-b8a0-49fab7ee9807")
+                            UsuarioId = new Guid("99eaa101-f991-49d5-bd8c-7ef3cd571744"),
+                            UsuarioSolicitanteId = new Guid("4d76f5cd-43b7-4381-8ea8-f7211b68bcb4")
                         },
                         new
                         {
                             Id = 2,
-                            AnimalId = 2,
                             EstadoId = 2,
                             FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioAdoptanteId = new Guid("681ce6b6-d8f4-477a-8cc8-eeacabd8053c"),
-                            UsuarioId = new Guid("79f2e44f-2ae3-4251-9e66-da1f021f9665")
+                            UsuarioId = new Guid("7ca2c52f-604f-4213-ae6b-45ae4998f6e1"),
+                            UsuarioSolicitanteId = new Guid("6a351e46-2689-4dac-ada1-2d246a74691f")
                         },
                         new
                         {
                             Id = 3,
-                            AnimalId = 3,
                             EstadoId = 1,
                             FechaFinal = new DateTime(2024, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioAdoptanteId = new Guid("09948fdb-7bd2-46bd-9559-4c4925bc3ca9"),
-                            UsuarioId = new Guid("1185253f-ef42-4972-bd8e-0e8c39749e51")
+                            UsuarioId = new Guid("ae57fa8f-6963-47ca-bdfa-006b2ab49583"),
+                            UsuarioSolicitanteId = new Guid("622e12ce-2125-4713-ab27-721d0afc9c2c")
                         },
                         new
                         {
                             Id = 4,
-                            AnimalId = 4,
                             EstadoId = 1,
                             FechaFinal = new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioAdoptanteId = new Guid("53504921-5ee0-44b0-ac6e-1361d0ad0b48"),
-                            UsuarioId = new Guid("dd6161fb-4fcd-4872-8f74-9600d42bb911")
+                            UsuarioId = new Guid("959796d1-e3ae-4953-a0d8-c0be2c894497"),
+                            UsuarioSolicitanteId = new Guid("8c3a2c1e-4ebb-4c4d-9bad-7cabbbc64114")
                         },
                         new
                         {
                             Id = 5,
-                            AnimalId = 5,
                             EstadoId = 3,
                             FechaFinal = new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioAdoptanteId = new Guid("52d58175-21d9-4fd5-8b6d-31938dfdfa29"),
-                            UsuarioId = new Guid("e6f5d921-01a2-4c4b-b92e-f893d84b9cbe")
+                            UsuarioId = new Guid("fd5f366b-9b08-4602-8f0d-7d5ff8c26732"),
+                            UsuarioSolicitanteId = new Guid("8aadce7a-d06c-4bd3-aede-b62f9f231296")
                         });
                 });
 
@@ -116,6 +108,9 @@ namespace Infrastructure.Migrations
                     b.Property<string>("AireLibre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AnimalId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CabeceraTramiteId")
                         .HasColumnType("int");
@@ -167,6 +162,7 @@ namespace Infrastructure.Migrations
                         {
                             TramiteId = new Guid("54af2b5e-b9fb-405e-8520-3d79af6b1a8d"),
                             AireLibre = "Patio",
+                            AnimalId = 1,
                             CabeceraTramiteId = 1,
                             CantidadPersonas = 4,
                             Castrados = true,
@@ -184,6 +180,7 @@ namespace Infrastructure.Migrations
                         {
                             TramiteId = new Guid("7e6066d1-7754-44e7-9758-706bdc60a88a"),
                             AireLibre = "Patio",
+                            AnimalId = 2,
                             CabeceraTramiteId = 2,
                             CantidadPersonas = 5,
                             Castrados = true,
@@ -201,6 +198,7 @@ namespace Infrastructure.Migrations
                         {
                             TramiteId = new Guid("e2780dbb-17dc-44dd-97f0-4a01a5b4ae86"),
                             AireLibre = "Jardín",
+                            AnimalId = 3,
                             CabeceraTramiteId = 3,
                             CantidadPersonas = 2,
                             Castrados = true,
@@ -217,6 +215,7 @@ namespace Infrastructure.Migrations
                         {
                             TramiteId = new Guid("d0940fb6-b3a3-4c14-ad0c-d565be450f1c"),
                             AireLibre = "Patio grande",
+                            AnimalId = 4,
                             CabeceraTramiteId = 4,
                             CantidadPersonas = 6,
                             Castrados = false,
@@ -279,8 +278,9 @@ namespace Infrastructure.Migrations
                     b.Property<int>("CabeceraTramiteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Cantidadpersonas")
-                        .HasColumnType("int");
+                    b.Property<string>("Cantidadpersonas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ChicosYEdad")
                         .IsRequired()

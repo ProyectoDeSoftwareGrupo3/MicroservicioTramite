@@ -47,8 +47,7 @@ namespace Infrastructure.Persistence
                 entity.HasKey(ct => ct.Id);
                 entity.Property(ct => ct.Id).ValueGeneratedOnAdd();
 
-                entity.Property(ct => ct.UsuarioId).IsRequired();
-                entity.Property(ct => ct.AnimalId).IsRequired();
+                entity.Property(ct => ct.UsuarioId).IsRequired();                
                 entity.Property(ct => ct.FechaInicio).IsRequired();
                 entity.Property(ct => ct.EstadoId).IsRequired();
 
@@ -86,6 +85,7 @@ namespace Infrastructure.Persistence
                 new TramiteAdopcion
                 {
                     TramiteId = new Guid("54af2b5e-b9fb-405e-8520-3d79af6b1a8d"),
+                    AnimalId = 1,
                     CantidadPersonas = 4,
                     HayChicos = true,
                     EdadHijoMenor = 10,
@@ -103,6 +103,7 @@ namespace Infrastructure.Persistence
                 new TramiteAdopcion
                 {
                     TramiteId = new Guid("7e6066d1-7754-44e7-9758-706bdc60a88a"),
+                    AnimalId = 2,
                     CantidadPersonas = 5,
                     HayChicos = true,
                     EdadHijoMenor = 10,
@@ -120,6 +121,7 @@ namespace Infrastructure.Persistence
                 new TramiteAdopcion
                 {
                     TramiteId = new Guid("e2780dbb-17dc-44dd-97f0-4a01a5b4ae86"),
+                    AnimalId = 3,
                     CantidadPersonas = 2,
                     HayChicos = false,
                     EdadHijoMenor = null,
@@ -138,6 +140,7 @@ namespace Infrastructure.Persistence
                 new TramiteAdopcion
                 {
                     TramiteId = new Guid("d0940fb6-b3a3-4c14-ad0c-d565be450f1c"),
+                    AnimalId = 4,
                     CantidadPersonas = 6,
                     HayChicos = true,
                     EdadHijoMenor = 12,
@@ -260,8 +263,7 @@ namespace Infrastructure.Persistence
                 {
                     Id = 1,
                     UsuarioId = Guid.NewGuid(),
-                    UsuarioAdoptanteId = Guid.NewGuid(),
-                    AnimalId = 1,
+                    UsuarioSolicitanteId = Guid.NewGuid(),
                     FechaInicio = new DateTime(2024, 3, 12),
                     EstadoId = 2,                    
                 },
@@ -269,8 +271,7 @@ namespace Infrastructure.Persistence
                 {
                     Id = 2,
                     UsuarioId = Guid.NewGuid(),
-                    UsuarioAdoptanteId = Guid.NewGuid(),
-                    AnimalId = 2,
+                    UsuarioSolicitanteId = Guid.NewGuid(),
                     FechaInicio = new DateTime(2024, 4, 12),
                     EstadoId = 2,                    
 
@@ -280,8 +281,7 @@ namespace Infrastructure.Persistence
                 {
                     Id = 3,
                     UsuarioId = Guid.NewGuid(),
-                    UsuarioAdoptanteId = Guid.NewGuid(),
-                    AnimalId = 3,
+                    UsuarioSolicitanteId = Guid.NewGuid(),
                     FechaInicio = new DateTime(2024, 5, 12),
                     FechaFinal = new DateTime(2024, 5, 13),
                     EstadoId = 1,                    
@@ -292,8 +292,7 @@ namespace Infrastructure.Persistence
                 {
                     Id = 4,
                     UsuarioId = Guid.NewGuid(),
-                    UsuarioAdoptanteId = Guid.NewGuid(),
-                    AnimalId = 4,
+                    UsuarioSolicitanteId = Guid.NewGuid(),
                     FechaInicio = new DateTime(2024, 6, 12),
                     FechaFinal = new DateTime(2024, 6, 13),
                     EstadoId = 1,                   
@@ -302,8 +301,7 @@ namespace Infrastructure.Persistence
                 {
                     Id = 5,
                     UsuarioId = Guid.NewGuid(),
-                    UsuarioAdoptanteId = Guid.NewGuid(),
-                    AnimalId = 5,
+                    UsuarioSolicitanteId = Guid.NewGuid(),
                     FechaInicio = new DateTime(2024, 6, 12),
                     FechaFinal = new DateTime(2024, 6, 13),
                     EstadoId = 3,                    

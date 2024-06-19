@@ -3,6 +3,7 @@
     public class TramiteAdopcionResponse
     {
         public Guid TramiteId { get; set; }
+        public int AnimalId { get; set; }
         public int CantidadPersonas { get; set; }
         public bool HayChicos { get; set; }
         public int? EdadHijoMenor { get; set; }

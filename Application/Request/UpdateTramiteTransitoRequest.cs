@@ -5,7 +5,7 @@
         public Guid TramiteId { get; set; }
         public string RazonInteres { get; set; }
         public string ExperienciaDeTransito { get; set; }
-        public int Cantidadpersonas { get; set; }
+        public string Cantidadpersonas { get; set; }
         public string ActitudHaciaAnimales { get; set; }
         public string ChicosYEdad { get; set; }
         public string HayMascotas { get; set; }
