@@ -123,22 +123,22 @@ public class TramitesController : ControllerBase
             return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
         }
     }
-    [HttpGet("Filters")]
-    [ProducesResponseType(typeof(TramiteResponse), 200)]
-    [ProducesResponseType(typeof(ExceptionMessage), 404)]
-    public async Task<IActionResult> GetAllTramitesByTramiteEstado(int? tramiteEstadoId, int? animalId)
-    {
-        try
-        {
-            var result = await _tramiteService.GetAllTramitesByFilters(tramiteEstadoId, animalId);
-            return new JsonResult(result) { StatusCode = 200 };
-        }
-        catch (ExceptionNotFound ex)
-        {
+    // [HttpGet("Filters")]
+    // [ProducesResponseType(typeof(TramiteResponse), 200)]
+    // [ProducesResponseType(typeof(ExceptionMessage), 404)]
+    // public async Task<IActionResult> GetAllTramitesByTramiteEstado(int? tramiteEstadoId, int? animalId)
+    // {
+    //     try
+    //     {
+    //         var result = await _tramiteService.GetAllTramitesByFilters(tramiteEstadoId, animalId);
+    //         return new JsonResult(result) { StatusCode = 200 };
+    //     }
+    //     catch (ExceptionNotFound ex)
+    //     {
 
-            return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
-        }
-    }
+    //         return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
+    //     }
+    // }
 
     [HttpGet("GetTramiteCountPerMonth/{year}")]
     public async Task<IActionResult> GetTramiteCountPerMonth(int year)
