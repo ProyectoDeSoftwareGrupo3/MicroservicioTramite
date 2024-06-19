@@ -61,7 +61,6 @@ namespace Application.Mappers
                 var response = new TramiteTransitoResponse
                 {
                     PropietarioInquilino = item.PropietarioInquilino,
-                    ActitudHaciaAnimales = item.ActitudHaciaAnimales,
                     Cantidadpersonas = item.Cantidadpersonas,
                     ChicosYEdad = item.ChicosYEdad,
                     DisponibilidadHoraria = item.DisponibilidadHoraria,
@@ -91,7 +90,6 @@ namespace Application.Mappers
             var response = new TramiteTransitoResponse
             {
                 PropietarioInquilino = transito.PropietarioInquilino,
-                ActitudHaciaAnimales = transito.ActitudHaciaAnimales,
                 Cantidadpersonas = transito.Cantidadpersonas,
                 ChicosYEdad = transito.ChicosYEdad,
                 DisponibilidadHoraria = transito.DisponibilidadHoraria,

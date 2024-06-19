@@ -58,8 +58,8 @@ namespace Infrastructure.Migrations
                             EstadoId = 2,
                             FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("99eaa101-f991-49d5-bd8c-7ef3cd571744"),
-                            UsuarioSolicitanteId = new Guid("4d76f5cd-43b7-4381-8ea8-f7211b68bcb4")
+                            UsuarioId = new Guid("7544e061-b0ce-4470-b7fc-05bb2f14954d"),
+                            UsuarioSolicitanteId = new Guid("2652907b-bb82-4db5-a238-bb89e93ce1ee")
                         },
                         new
                         {
@@ -67,8 +67,8 @@ namespace Infrastructure.Migrations
                             EstadoId = 2,
                             FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("7ca2c52f-604f-4213-ae6b-45ae4998f6e1"),
-                            UsuarioSolicitanteId = new Guid("6a351e46-2689-4dac-ada1-2d246a74691f")
+                            UsuarioId = new Guid("33ab4e77-4389-4b01-ae04-30af853d8b3e"),
+                            UsuarioSolicitanteId = new Guid("5d5fc9f3-b87a-439f-9fe6-9687a0fd422c")
                         },
                         new
                         {
@@ -76,8 +76,8 @@ namespace Infrastructure.Migrations
                             EstadoId = 1,
                             FechaFinal = new DateTime(2024, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("ae57fa8f-6963-47ca-bdfa-006b2ab49583"),
-                            UsuarioSolicitanteId = new Guid("622e12ce-2125-4713-ab27-721d0afc9c2c")
+                            UsuarioId = new Guid("cadf3d1c-2c42-41e9-8151-621cf72d972b"),
+                            UsuarioSolicitanteId = new Guid("95fab9a7-4790-4e0f-becb-e465ae22d3c0")
                         },
                         new
                         {
@@ -85,8 +85,8 @@ namespace Infrastructure.Migrations
                             EstadoId = 1,
                             FechaFinal = new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("959796d1-e3ae-4953-a0d8-c0be2c894497"),
-                            UsuarioSolicitanteId = new Guid("8c3a2c1e-4ebb-4c4d-9bad-7cabbbc64114")
+                            UsuarioId = new Guid("9d5a1986-4cbd-448a-84c2-fda42fa8dd1b"),
+                            UsuarioSolicitanteId = new Guid("c49120fa-77d9-44e0-a949-2054a71583d2")
                         },
                         new
                         {
@@ -94,8 +94,8 @@ namespace Infrastructure.Migrations
                             EstadoId = 3,
                             FechaFinal = new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("fd5f366b-9b08-4602-8f0d-7d5ff8c26732"),
-                            UsuarioSolicitanteId = new Guid("8aadce7a-d06c-4bd3-aede-b62f9f231296")
+                            UsuarioId = new Guid("c2cf3a95-369e-4708-a9e9-08894ac1eb32"),
+                            UsuarioSolicitanteId = new Guid("b454fa91-15ce-4f7a-b92e-84e65a2b82bc")
                         });
                 });
 
@@ -270,10 +270,6 @@ namespace Infrastructure.Migrations
                     b.Property<Guid>("TramiteId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ActitudHaciaAnimales")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CabeceraTramiteId")
                         .HasColumnType("int");

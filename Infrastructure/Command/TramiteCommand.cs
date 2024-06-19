@@ -77,7 +77,6 @@ namespace Infrastructure.Command
                 transitoUpdated.RazonInteres = request.RazonInteres;
                 transitoUpdated.ExperienciaDeTransito = request.ExperienciaDeTransito;
                 transitoUpdated.Cantidadpersonas = request.Cantidadpersonas;
-                transitoUpdated.ActitudHaciaAnimales = request.ActitudHaciaAnimales;
                 transitoUpdated.ChicosYEdad = request.ChicosYEdad;
                 transitoUpdated.HayMascotas = request.HayMascotas;
                 transitoUpdated.VacunadosCastrados = request.VacunadosCastrados;

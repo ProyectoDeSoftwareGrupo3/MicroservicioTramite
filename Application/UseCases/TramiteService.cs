@@ -86,7 +86,6 @@ namespace Application.UseCases
 
                 var tramiteTransito = new TramiteTransito
                 {
-                    ActitudHaciaAnimales = request.ActitudHaciaAnimales,
                     Cantidadpersonas = request.Cantidadpersonas,
                     ChicosYEdad = request.ChicosYEdad,
                     DisponibilidadHoraria = request.DisponibilidadHoraria,

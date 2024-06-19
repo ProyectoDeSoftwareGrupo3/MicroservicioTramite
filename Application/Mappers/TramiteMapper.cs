@@ -120,7 +120,6 @@ namespace Application.Mappers
             var response = new TramiteTransitoResponse
             {
                 PropietarioInquilino = tramiteTransito.PropietarioInquilino,
-                ActitudHaciaAnimales = tramiteTransito.ActitudHaciaAnimales,
                 Cantidadpersonas = tramiteTransito.Cantidadpersonas,
                 ChicosYEdad = tramiteTransito.ChicosYEdad,
                 DisponibilidadHoraria = tramiteTransito.DisponibilidadHoraria,
