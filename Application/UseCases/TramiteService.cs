@@ -1,4 +1,5 @@
-﻿using Application.Exceptions;
+﻿using System.Runtime.CompilerServices;
+using Application.Exceptions;
 using Application.Interfaces.IMappers;
 using Application.Interfaces.ITramite;
 using Application.Interfaces.ITramiteEstado;
@@ -48,9 +49,10 @@ namespace Application.UseCases
         {
             try
             {
-                var CabeceraTramite = await CreateTramite(request.UsuarioId, request.UsuarioAdoptanteId, request.AnimalId);
+                var CabeceraTramite = await CreateTramite(request.UsuarioId, request.UsuarioSolicitanteId);
                 var tramiteAdopcion = new TramiteAdopcion
                 {
+                    AnimalId = request.AnimalId,
                     AireLibre = request.AireLibre,
                     CantidadPersonas = request.CantidadPersonas,
                     Castrados = request.Castrados,
@@ -80,7 +82,7 @@ namespace Application.UseCases
         {
             try
             {
-                var CabeceraTramite = CreateTramite(request.UsuarioId, request.UsuarioAdoptanteId, request.AnimalId);                
+                var CabeceraTramite = await CreateTramite(request.UsuarioId, request.UsuarioSolicitanteId);                
 
                 var tramiteTransito = new TramiteTransito
                 {
@@ -144,33 +146,33 @@ namespace Application.UseCases
             }
         }
 
-        public async Task<List<TramiteResponse>> GetAllTramitesByFilters(int? estadoTramiteId, int? animalId)
-        {
-            try
-            {
-                if (estadoTramiteId == null && animalId == null)
-                {
-                    return await _mapper.GetTramitesResponse(await _query.GetTramites());
-                }
-                if (estadoTramiteId < 1 || estadoTramiteId > 3)
-                {
-                    throw new ExceptionNotFound("No existe tramite con ese estado");
-                }
-                if (!await CheckAnimalId((int)animalId))
-                {
-                    throw new ExceptionNotFound("No existe ese Tramite con ese Id de animal");
-                }
-                var tramites = await _query.GetTramitesFilters(estadoTramiteId, animalId);
-                return await _mapper.GetTramitesResponse(tramites);
+        // public async Task<List<TramiteResponse>> GetAllTramitesByFilters(int? estadoTramiteId, int? animalId)
+        // {
+        //     try
+        //     {
+        //         if (estadoTramiteId == null && animalId == null)
+        //         {
+        //             return await _mapper.GetTramitesResponse(await _query.GetTramites());
+        //         }
+        //         if (estadoTramiteId < 1 || estadoTramiteId > 3)
+        //         {
+        //             throw new ExceptionNotFound("No existe tramite con ese estado");
+        //         }
+        //         if (!await CheckAnimalId((int)animalId))
+        //         {
+        //             throw new ExceptionNotFound("No existe ese Tramite con ese Id de animal");
+        //         }
+        //         var tramites = await _query.GetTramitesFilters(estadoTramiteId, animalId);
+        //         return await _mapper.GetTramitesResponse(tramites);
 
-            }
-            catch (ExceptionNotFound e)
-            {
+        //     }
+        //     catch (ExceptionNotFound e)
+        //     {
 
-                throw new ExceptionNotFound(e.Message);
-            }
+        //         throw new ExceptionNotFound(e.Message);
+        //     }
 
-        }
+        // }
 
         public async Task<TramiteResponse> GetTramiteById(int id)
         {
@@ -191,17 +193,16 @@ namespace Application.UseCases
             }
         }
 
-        public async Task<TramiteResponse> CreateTramite(Guid UsuarioId, Guid UsuarioSolicitanteId, int AnimalId)
+        public async Task<TramiteResponse> CreateTramite(Guid UsuarioId, Guid UsuarioSolicitanteId)
         {
             try
             {
                 var tramite = new CabeceraTramite
                 {
                     UsuarioId = UsuarioId,
-                    UsuarioAdoptanteId = UsuarioSolicitanteId,
+                    UsuarioSolicitanteId = UsuarioSolicitanteId,
                     FechaInicio = DateTime.Now,
-                    EstadoId = 2,
-                    AnimalId = AnimalId                    
+                    EstadoId = 2                
                 };
                 var result = await _command.CreateTramite(tramite);
                 return await _mapper.TramiteResponse(await _query.GetTramiteById(result.Id));
@@ -280,10 +281,10 @@ namespace Application.UseCases
             return (await _query.GetTramiteById(id) != null);
         }
 
-        private async Task<bool> CheckAnimalId(int id)
-        {
-            return (await _query.GetTramiteByAnimalId(id) != null);
-        }
+        // private async Task<bool> CheckAnimalId(int id)
+        // {
+        //     return (await _query.GetTramiteByAnimalId(id) != null);
+        // }
 
 
     }
