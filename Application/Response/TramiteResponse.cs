@@ -1,4 +1,6 @@
-﻿namespace Application.Response
+﻿using Domain.Models;
+
+namespace Application.Response
 {
     public class TramiteResponse
     {
@@ -9,5 +11,6 @@
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }        
         public GetAllTramiteEstadoResponse EstadoResponse { get; set; }
+        public GetAnimalResponse Animal { get; set; }
     }
 }

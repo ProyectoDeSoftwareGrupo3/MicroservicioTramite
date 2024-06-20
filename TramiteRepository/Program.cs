@@ -2,11 +2,14 @@ using Application.Interfaces.IMappers;
 using Application.Interfaces.ITramite;
 using Application.Interfaces.ITramiteEstado;
 using Application.Interfaces.ITramiteTipo;
+using Application.Interfaces.Services;
 using Application.Mappers;
 using Application.UseCases;
 using Infrastructure.Command;
 using Infrastructure.Persistence;
 using Infrastructure.Query;
+using Infrastructure.Services;
+using Infrastructure.Services.Http;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -70,6 +73,12 @@ builder.Services.AddSwaggerGen(swagger =>
     });
 });
 
+builder.Services.AddHttpClient<AnimalApiClient>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7055/"); // URL base de la API externa
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
+
 
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<TramiteDbContext>(options => options.UseSqlServer(connectionString));
@@ -91,7 +100,7 @@ builder.Services.AddScoped<ITramiteTipoMapper, TramiteTipoMapper>();
 builder.Services.AddScoped<ITramiteEstadoMapper, TramiteEstadoMapper>();
 builder.Services.AddScoped<ITramiteMapper, TramiteMapper>();
 
-
+builder.Services.AddScoped<IAnimalService, AnimalService>();
 
 //builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 var app = builder.Build();

@@ -2,8 +2,10 @@
 using Application.Interfaces.IMappers;
 using Application.Interfaces.ITramite;
 using Application.Interfaces.ITramiteEstado;
+using Application.Interfaces.Services;
 using Application.Request;
 using Application.Response;
+using Domain.Dtos;
 using Domain.Entities;
 
 namespace Application.UseCases
@@ -14,14 +16,14 @@ namespace Application.UseCases
         private readonly ITramiteQuery _query;
         private readonly ITramiteEstadoService _estadoservice;
         private readonly ITramiteMapper _mapper;
-
-        public TramiteService(ITramiteCommand command, ITramiteQuery query, ITramiteMapper mapper, ITramiteEstadoService estadoService)
+        private readonly IAnimalService _animalService;
+        public TramiteService(ITramiteCommand command, ITramiteQuery query, ITramiteMapper mapper, ITramiteEstadoService estadoService, IAnimalService animalService)
         {
             _command = command;
             _query = query;
             _mapper = mapper;
             _estadoservice = estadoService;
-
+            _animalService = animalService;
         }
 
         public async Task<TramiteResponse> DeleteTramite(int Id)
@@ -160,7 +162,16 @@ namespace Application.UseCases
                     throw new ExceptionNotFound("No existe ese Tramite con ese Id de animal");
                 }
                 var tramites = await _query.GetTramitesFilters(estadoTramiteId, animalId);
-                return await _mapper.GetTramitesResponse(tramites);
+
+                var cabeceras = tramites.Select(tramite => ConvertToDto(tramite)).ToList();
+
+                foreach (var cabecera in cabeceras)
+                {
+                    var animal = await _animalService.GetAnimalByIdAsync(cabecera.AnimalId);
+                    cabecera.Animal = animal;
+                }
+
+                return await _mapper.GetTramitesResponse(cabeceras);
 
             }
             catch (ExceptionNotFound e)
@@ -169,6 +180,12 @@ namespace Application.UseCases
                 throw new ExceptionNotFound(e.Message);
             }
 
+        }
+
+        public static CabeceraTramiteDto ConvertToDto(CabeceraTramite tramite)
+        {
+            // Aquí va la lógica para convertir de CabeceraTramite a CabeceraTramiteDto
+            return new CabeceraTramiteDto(tramite);
         }
 
         public async Task<TramiteResponse> GetTramiteById(int id)
@@ -236,7 +253,7 @@ namespace Application.UseCases
             try
             {
                 var tramite = await _query.GetTramites();
-                List<CabeceraTramite> lista = new List<CabeceraTramite>();
+                List<CabeceraTramiteDto> lista = new List<CabeceraTramiteDto>();
                 foreach (var item in tramite)
                 {
                     if (item.FechaInicio.Month == dateTime.Month && item.FechaInicio.Year == dateTime.Year)
