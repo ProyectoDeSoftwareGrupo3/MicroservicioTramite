@@ -1,5 +1,6 @@
 ﻿using Application.Exceptions;
 using Application.Interfaces.ITramite;
+using Domain.Dtos;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -83,15 +84,19 @@ namespace Infrastructure.Query
         //     }
         // }
 
-        public async Task<List<CabeceraTramite>> GetTramites()
+        public async Task<List<CabeceraTramiteDto>> GetTramites()
         {
             try
             {
-                return await _context.CabeceraTramites
+                var tramite = await _context.CabeceraTramites
                     .Include(t => t.Estado)
                     .Include(t => t.TramiteTransito)
                     .Include(t => t.TramiteAdopcion)
                     .ToListAsync();
+
+                var tramiteDtos = tramite.Select(tramite => new CabeceraTramiteDto(tramite)).ToList();
+
+                return tramiteDtos;
             }
             catch (DbException)
             {
@@ -99,6 +104,7 @@ namespace Infrastructure.Query
             }
         }
 
+     
         public async Task<IEnumerable<CabeceraTramite>> GetAllAsync()
         {
             return await _context.CabeceraTramites.ToListAsync();

@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.IMappers;
 using Application.Response;
+using Domain.Dtos;
 using Domain.Entities;
 
 namespace Application.Mappers
@@ -13,7 +14,7 @@ namespace Application.Mappers
             _estadoMapper = estadoMapper;
             _tipoMapper = tipoMapper;
         }
-        public Task<TramiteByMonthResponse> TramiteByMonthResponse(List<CabeceraTramite> tramites)
+        public Task<TramiteByMonthResponse> TramiteByMonthResponse(List<CabeceraTramiteDto> tramites)
         {
             int aprobado = 0;
             int rechazado = 0;
@@ -43,7 +44,7 @@ namespace Application.Mappers
             return Task.FromResult(response);
         }
 
-        public async Task<List<TramiteResponse>> GetTramitesResponse(List<CabeceraTramite> tramites)
+        public async Task<List<TramiteResponse>> GetTramitesResponse(List<CabeceraTramiteDto> tramites)
         {
             List<TramiteResponse> listresponse = new List<TramiteResponse>();
             foreach (var tramite in tramites)
@@ -52,10 +53,10 @@ namespace Application.Mappers
                     {
                         Id = tramite.Id,
                         UsuarioId = tramite.UsuarioId,
-                        UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
+                     //   UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
                         FechaFinal = tramite.FechaFinal,
                         FechaInicio = tramite.FechaInicio,
-
+                        Animal = tramite.Animal,
                         EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado)
                     };
                     listresponse.Add(response);                
