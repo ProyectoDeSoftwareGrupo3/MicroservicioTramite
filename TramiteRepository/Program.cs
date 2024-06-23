@@ -1,3 +1,4 @@
+using Application.Interfaces.IEmail;
 using Application.Interfaces.IMappers;
 using Application.Interfaces.ITramite;
 using Application.Interfaces.ITramiteEstado;
@@ -101,6 +102,8 @@ builder.Services.AddScoped<ITramiteEstadoMapper, TramiteEstadoMapper>();
 builder.Services.AddScoped<ITramiteMapper, TramiteMapper>();
 
 builder.Services.AddScoped<IAnimalService, AnimalService>();
+
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 //builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 var app = builder.Build();

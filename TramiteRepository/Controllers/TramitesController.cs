@@ -1,9 +1,11 @@
 ﻿using Application.Exceptions;
 using Application.Interfaces.ITramite;
+using Application.Interfaces.IEmail;
 using Application.Request;
 using Application.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace TramiteRepository.Controllers;
 
@@ -14,9 +16,11 @@ public class TramitesController : ControllerBase
 {
 
     private readonly ITramiteService _tramiteService;
-    public TramitesController(ITramiteService tramiteService)
+    private readonly IEmailService _emailService;
+    public TramitesController(ITramiteService tramiteService, IEmailService emailService)
     {
         _tramiteService = tramiteService;
+        _emailService = emailService;
     }
 
 
@@ -113,7 +117,7 @@ public class TramitesController : ControllerBase
     public async Task<IActionResult> GetTramiteByMonth()
     {
         try
-        {
+        {                       
             var result = await _tramiteService.GetTramiteByMonth(DateTime.Now);
             return new JsonResult(result) { StatusCode = 200 };
         }
@@ -146,7 +150,10 @@ public class TramitesController : ControllerBase
         var result = await _tramiteService.GetTramiteCountPerMonthAsync(year);
         return Ok(result);
     }
-
-
+    
+    private async Task NotifyUser(string userEmail, string message)
+    {        
+        await _emailService.SendEmailAsync(userEmail, "Estado de la solicitud", message);
+    }
 
 }
