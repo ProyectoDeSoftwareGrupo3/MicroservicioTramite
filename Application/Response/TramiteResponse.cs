@@ -10,6 +10,7 @@ namespace Application.Response
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }        
         public GetAllTramiteEstadoResponse EstadoResponse { get; set; }
-        public GetAnimalResponse Animal { get; set; }
+        public TramiteTransitoResponse TransitoResponse { get; set; }
+        public TramiteAdopcionResponse AdopcionResponse { get; set;}
     }
 }

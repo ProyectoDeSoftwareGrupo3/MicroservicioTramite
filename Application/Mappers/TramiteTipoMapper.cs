@@ -36,6 +36,7 @@ namespace Application.Mappers
         {
             var response = new TramiteAdopcionResponse
             {
+                AnimalId = adopcion.AnimalId,
                 TramiteId = adopcion.TramiteId,
                 AireLibre = adopcion.AireLibre,
                 CantidadPersonas = adopcion.CantidadPersonas,

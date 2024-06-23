@@ -8,9 +8,9 @@ public class CabeceraTramiteDto
     public int Id { get; set; }
     public Guid UsuarioId { get; set; }
     public Guid UsuarioSolicitanteId { get; set; }
-    public int AnimalId { get; set; }
     public DateTime FechaInicio { get; set; }
     public DateTime FechaFinal { get; set; }
+    public string TipoDeTramite { get; set; }
 
 
     public TramiteEstado Estado { get; set; }
@@ -24,8 +24,7 @@ public class CabeceraTramiteDto
     {
         Id = tramite.Id;
         UsuarioId = tramite.UsuarioId;
-        UsuarioSolicitanteId = tramite.UsuarioSolicitanteId;
-       // AnimalId = tramite.AnimalId;
+        UsuarioSolicitanteId = tramite.UsuarioSolicitanteId;             
         FechaInicio = tramite.FechaInicio;
         FechaFinal = tramite.FechaFinal;
         Estado = tramite.Estado;

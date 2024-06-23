@@ -130,7 +130,25 @@ namespace Infrastructure.Query
                     .ToListAsync();
 
                 var tramiteDtos = tramite.Select(tramite => new CabeceraTramiteDto(tramite)).ToList();
-
+                // List<CabeceraTramiteDto> dtos = new List<CabeceraTramiteDto>();
+                // foreach(var tramite in tramites)                
+                // {
+                //     CabeceraTramiteDto dto = new CabeceraTramiteDto 
+                //     {
+                //         Id = tramite.Id,
+                //         AnimalId = tramite.TramiteAdopcion.AnimalId,
+                //         UsuarioId = tramite.UsuarioId,
+                //         UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,                              
+                //         FechaInicio = tramite.FechaInicio,
+                //         FechaFinal = tramite.FechaFinal,
+                //         Estado = tramite.Estado,
+                //         EstadoId = tramite.EstadoId,
+                //         TramiteAdopcion = tramite.TramiteAdopcion,
+                //         TramiteTransito = tramite.TramiteTransito,
+                //     };                    
+                //     dtos.Add(dto);
+                // }
+                // return dtos;
                 return tramiteDtos;
             }
             catch (DbException)

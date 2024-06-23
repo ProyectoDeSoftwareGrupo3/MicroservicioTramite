@@ -48,18 +48,36 @@ namespace Application.Mappers
         {
             List<TramiteResponse> listresponse = new List<TramiteResponse>();
             foreach (var tramite in tramites)
-            {
-                var response = new TramiteResponse
+            {    
+                if(tramite.TramiteAdopcion != null)
+                {
+                    var response = new TramiteResponse
                     {
                         Id = tramite.Id,
                         UsuarioId = tramite.UsuarioId,
                         UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
                         FechaFinal = tramite.FechaFinal,
-                        FechaInicio = tramite.FechaInicio,
-                        Animal = tramite.Animal,
-                        EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado)
+                        FechaInicio = tramite.FechaInicio,                                                
+                        EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),
+                        AdopcionResponse = await _tipoMapper.TramiteAdopcionResponse(tramite.TramiteAdopcion)
                     };
-                    listresponse.Add(response);                
+                    listresponse.Add(response); 
+                }    
+                else
+                {
+                    var response = new TramiteResponse
+                    {
+                        Id = tramite.Id,
+                        UsuarioId = tramite.UsuarioId,
+                        UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
+                        FechaFinal = tramite.FechaFinal,
+                        FechaInicio = tramite.FechaInicio,                                                
+                        EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),
+                        TransitoResponse = await _tipoMapper.TramiteTransitoResponse(tramite.TramiteTransito)
+                    };
+                    listresponse.Add(response); 
+                }        
+                
             }
             return listresponse;
         }
