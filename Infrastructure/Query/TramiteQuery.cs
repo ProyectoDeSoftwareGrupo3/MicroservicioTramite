@@ -55,7 +55,9 @@ namespace Infrastructure.Query
                 if(animalId > 0 && tramiteEstado > 0)
                 {
                     return await _context.CabeceraTramites
-                                .Include(cta => cta.TramiteAdopcion.AnimalId == animalId)
+                                .Include(cta => cta.TramiteAdopcion)
+                                .Where(cta => cta.TramiteAdopcion.AnimalId == animalId)
+                                .Include(cte => cte.Estado)
                                 .Where(ce => ce.EstadoId == tramiteEstado)
                                 .ToListAsync();
                 }
@@ -63,6 +65,8 @@ namespace Infrastructure.Query
                 {
                     return await _context.CabeceraTramites
                                 .Include(cta => cta.TramiteAdopcion)
+                                .Include(cte => cte.Estado)
+                                .Where(cta => cta.TramiteAdopcion.AnimalId == animalId)
                                 .ToListAsync();
                 }
                 if(tramiteEstado > 0)
@@ -70,12 +74,14 @@ namespace Infrastructure.Query
                     return await _context.CabeceraTramites
                                 .Include(cta => cta.TramiteAdopcion)
                                 .Include(ctt => ctt.TramiteTransito)
+                                .Include(cte => cte.Estado)
                                 .Where(ce => ce.EstadoId == tramiteEstado)
                                 .ToListAsync();
                 }
                 return await _context.CabeceraTramites
                                 .Include(cta => cta.TramiteAdopcion)
                                 .Include(ctt => ctt.TramiteTransito)
+                                .Include(cte => cte.Estado)
                                 .ToListAsync();
             }
             catch (DbException)
