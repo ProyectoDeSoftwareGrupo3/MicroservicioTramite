@@ -48,6 +48,41 @@ namespace Infrastructure.Query
         //         throw new Conflict("Hubo un error en la base de datos");
         //     }
         // }
+        public async Task<List<CabeceraTramite>> GetTramitesFilters(int? tramiteEstado, int? animalId)
+        {
+            try
+            {
+                if(animalId > 0 && tramiteEstado > 0)
+                {
+                    return await _context.CabeceraTramites
+                                .Include(cta => cta.TramiteAdopcion.AnimalId == animalId)
+                                .Where(ce => ce.EstadoId == tramiteEstado)
+                                .ToListAsync();
+                }
+                if(animalId > 0)
+                {
+                    return await _context.CabeceraTramites
+                                .Include(cta => cta.TramiteAdopcion)
+                                .ToListAsync();
+                }
+                if(tramiteEstado > 0)
+                {
+                    return await _context.CabeceraTramites
+                                .Include(cta => cta.TramiteAdopcion)
+                                .Include(ctt => ctt.TramiteTransito)
+                                .Where(ce => ce.EstadoId == tramiteEstado)
+                                .ToListAsync();
+                }
+                return await _context.CabeceraTramites
+                                .Include(cta => cta.TramiteAdopcion)
+                                .Include(ctt => ctt.TramiteTransito)
+                                .ToListAsync();
+            }
+            catch (DbException)
+            {
+                throw new Conflict("Hubo un error en la base de datos");
+            }
+        }
 
         // public async Task<List<CabeceraTramite>> GetTramitesFilters(int? tramiteEstado, int? animalId)
         // {

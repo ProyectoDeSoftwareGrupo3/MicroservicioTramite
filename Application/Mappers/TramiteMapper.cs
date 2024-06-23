@@ -53,7 +53,7 @@ namespace Application.Mappers
                     {
                         Id = tramite.Id,
                         UsuarioId = tramite.UsuarioId,
-                     //   UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
+                        UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
                         FechaFinal = tramite.FechaFinal,
                         FechaInicio = tramite.FechaInicio,
                         Animal = tramite.Animal,

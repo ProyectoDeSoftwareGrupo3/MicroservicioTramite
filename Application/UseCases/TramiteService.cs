@@ -147,42 +147,42 @@ namespace Application.UseCases
             }
         }
 
-        //public async Task<List<TramiteResponse>> GetAllTramitesByFilters(int? estadoTramiteId, int? animalId)
-        //{
-        //    try
-        //    {
-        //        if (estadoTramiteId == null && animalId == null)
-        //        {
-        //            return await _mapper.GetTramitesResponse(await _query.GetTramites());
-        //        }
-        //        if (estadoTramiteId < 1 || estadoTramiteId > 3)
-        //        {
-        //            throw new ExceptionNotFound("No existe tramite con ese estado");
-        //        }
-        //        if (!await CheckAnimalId((int)animalId))
-        //        {
-        //            throw new ExceptionNotFound("No existe ese Tramite con ese Id de animal");
-        //        }
-        //        var tramites = await _query.GetTramitesFilters(estadoTramiteId, animalId);
+        public async Task<List<TramiteResponse>> GetAllTramitesByFilters(int? estadoTramiteId, int? animalId)
+        {
+           try
+           {
+               if (estadoTramiteId == null && animalId == null)
+               {
+                   return await _mapper.GetTramitesResponse(await _query.GetTramites());
+               }
+               if (estadoTramiteId < 1 || estadoTramiteId > 3)
+               {
+                   throw new ExceptionNotFound("No existe tramite con ese estado");
+               }
+            //    if (!await CheckAnimalId((int)animalId))
+            //    {
+            //        throw new ExceptionNotFound("No existe ese Tramite con ese Id de animal");
+            //    }
+               var tramites = await _query.GetTramitesFilters(estadoTramiteId, animalId);
 
-        //        var cabeceras = tramites.Select(tramite => ConvertToDto(tramite)).ToList();
+               var cabeceras = tramites.Select(tramite => ConvertToDto(tramite)).ToList();
 
-        //        foreach (var cabecera in cabeceras)
-        //        {
-        //            var animal = await _animalService.GetAnimalByIdAsync(cabecera.AnimalId);
-        //            cabecera.Animal = animal;
-        //        }
+               foreach (var cabecera in cabeceras)
+               {
+                   var animal = await _animalService.GetAnimalByIdAsync(cabecera.AnimalId);
+                   cabecera.Animal = animal;
+               }
 
-        //        return await _mapper.GetTramitesResponse(cabeceras);
+               return await _mapper.GetTramitesResponse(cabeceras);
 
-        //    }
-        //    catch (ExceptionNotFound e)
-        //    {
+           }
+           catch (ExceptionNotFound e)
+           {
 
-        //        throw new ExceptionNotFound(e.Message);
-        //    }
+               throw new ExceptionNotFound(e.Message);
+           }
 
-        //}
+        }
 
         public static CabeceraTramiteDto ConvertToDto(CabeceraTramite tramite)
         {
