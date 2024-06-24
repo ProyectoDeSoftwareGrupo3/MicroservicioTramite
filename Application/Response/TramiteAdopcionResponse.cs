@@ -1,4 +1,6 @@
-﻿namespace Application.Response
+﻿using Domain.Models;
+
+namespace Application.Response
 {
     public class TramiteAdopcionResponse
     {
@@ -17,5 +19,6 @@
         public int HorasSolo { get; set; }
         public int PaseoXMes { get; set; }
         public int CabeceraTramiteId { get; set; }
+        public GetAnimalResponse AnimalResponse { get; set; }        
     }
 }

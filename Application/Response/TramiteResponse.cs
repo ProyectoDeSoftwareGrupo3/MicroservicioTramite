@@ -11,6 +11,6 @@ namespace Application.Response
         public DateTime FechaFinal { get; set; }        
         public GetAllTramiteEstadoResponse EstadoResponse { get; set; }
         public TramiteTransitoResponse TransitoResponse { get; set; }
-        public TramiteAdopcionResponse AdopcionResponse { get; set;}
+        public TramiteAdopcionResponse AdopcionResponse { get; set;}       
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces.IMappers;
+using Application.Interfaces.Services;
 using Application.Response;
 using Domain.Entities;
 
@@ -6,6 +7,13 @@ namespace Application.Mappers
 {
     public class TramiteTipoMapper : ITramiteTipoMapper
     {
+        private readonly IAnimalService _animalService;
+
+        public TramiteTipoMapper(IAnimalService animalService)
+        {
+            _animalService = animalService;
+        }
+
         public Task<List<TramiteAdopcionResponse>> GetTramiteAdopciones(List<TramiteAdopcion> adopciones)
         {
             List<TramiteAdopcionResponse> list = new List<TramiteAdopcionResponse>();
@@ -32,7 +40,7 @@ namespace Application.Mappers
             return Task.FromResult(list);
         }
 
-        public Task<TramiteAdopcionResponse> TramiteAdopcionResponse(TramiteAdopcion adopcion)
+        public async Task<TramiteAdopcionResponse> TramiteAdopcionResponse(TramiteAdopcion adopcion)
         {
             var response = new TramiteAdopcionResponse
             {
@@ -49,9 +57,10 @@ namespace Application.Mappers
                 PaseoXMes = adopcion.PaseoXMes,
                 PropietarioInquilino = adopcion.PropietarioInquilino,
                 Vacunados = adopcion.Vacunados,
-                CabeceraTramiteId = adopcion.CabeceraTramiteId
+                CabeceraTramiteId = adopcion.CabeceraTramiteId,
+                AnimalResponse = await _animalService.GetAnimalByIdAsync(adopcion.AnimalId)
             };
-            return Task.FromResult(response);
+            return response;
         }
 
         public Task<List<TramiteTransitoResponse>> GetTramiteTransitos(List<TramiteTransito> transitos)
