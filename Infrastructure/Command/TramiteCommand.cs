@@ -147,5 +147,24 @@ namespace Infrastructure.Command
                 throw new Conflict("Error en la base de datos");
             }
         }
+        public async Task<CabeceraTramite> UpdateTramiteEstado(UpdateTramiteEstadoRequest request)
+        {
+            try
+            {
+                var tramiteUpdated = await _context.CabeceraTramites
+                                                    .Include(t => t.Estado)
+                                                    .FirstOrDefaultAsync(t => t.Id == request.TramiteId);
+                tramiteUpdated.EstadoId = request.EstadoId;
+                await _context.SaveChangesAsync();
+                var updated = await _context.CabeceraTramites
+                                                    .Include(t => t.Estado)
+                                                    .FirstOrDefaultAsync(t => t.Id == request.TramiteId);
+                return updated;
+            }
+            catch (DbUpdateException)
+            {
+                throw new Conflict("Error en la base de datos");
+            }
+        }
     }
 }

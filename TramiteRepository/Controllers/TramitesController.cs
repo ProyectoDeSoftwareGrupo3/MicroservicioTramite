@@ -155,5 +155,19 @@ public class TramitesController : ControllerBase
     {        
         await _emailService.SendEmailAsync(userEmail, "Estado de la solicitud", message);
     }
+    [HttpPut("UpdateState")]
+    public async Task<IActionResult> UpdateTramiteEstado(UpdateTramiteEstadoRequest request)
+    {
+        try
+        {
+            var result = await _tramiteService.UpdateTramiteEstado(request);
+            return new JsonResult(result){StatusCode = 200};
+        }
+        catch (ExceptionNotFound ex)
+        {
+
+            return new JsonResult(new ExceptionMessage { Message = ex.Message }) { StatusCode = 404 };
+        }
+    }
 
 }

@@ -13,6 +13,8 @@ namespace Application.Interfaces.ITramite
         Task<TramiteAdopcion> UpdateTramiteAdopcion(UpdateTramiteAdopcionRequest request);
         Task<CabeceraTramite> DeleteTramite(int id);
 
+        Task<CabeceraTramite> UpdateTramiteEstado(UpdateTramiteEstadoRequest request);
+
 
     }
 }

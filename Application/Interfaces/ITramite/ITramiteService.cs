@@ -12,6 +12,7 @@ namespace Application.Interfaces.ITramite
         Task<UpdateTramiteResponse> UpdateTramite(UpdateTramiteRequest request);
         Task<TramiteAdopcionResponse> UpdateTramiteAdopcion(UpdateTramiteAdopcionRequest request);
         Task<TramiteTransitoResponse> UpdateTramiteTransito(UpdateTramiteTransitoRequest request);
+        Task<UpdateTramiteResponse> UpdateTramiteEstado(UpdateTramiteEstadoRequest request);
 
         Task<TramiteResponse> GetTramiteById(int id);
         Task<TramiteByMonthResponse> GetTramiteByMonth(DateTime dateTime);

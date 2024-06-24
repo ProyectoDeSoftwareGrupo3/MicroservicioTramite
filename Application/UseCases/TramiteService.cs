@@ -247,6 +247,22 @@ namespace Application.UseCases
                 throw new ExceptionNotFound(e.Message);
             }
         }
+        public async Task<UpdateTramiteResponse> UpdateTramiteEstado(UpdateTramiteEstadoRequest request)
+        {
+            try
+            {
+                if (!await CheckTramite(request.TramiteId))
+                {
+                    throw new ExceptionNotFound("No existe ese tramite");
+                }
+                var tramiteUpdated = await _command.UpdateTramiteEstado(request);
+                return await _mapper.UpdateTramiteResponse(tramiteUpdated);
+            }
+            catch (ExceptionNotFound e)
+            {
+                throw new ExceptionNotFound(e.Message);
+            }
+        }
 
         public async Task<TramiteByMonthResponse> GetTramiteByMonth(DateTime dateTime)
         {
@@ -290,11 +306,14 @@ namespace Application.UseCases
 
             return counts;
         }
+        
 
         private async Task<bool> CheckTramite(int id)
         {
             return (await _query.GetTramiteById(id) != null);
         }
+
+        
 
         // private async Task<bool> CheckAnimalId(int id)
         // {
