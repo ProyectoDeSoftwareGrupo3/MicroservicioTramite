@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces.IMappers;
+using Application.Interfaces.Services;
 using Application.Response;
 using Domain.Dtos;
 using Domain.Entities;
@@ -9,11 +10,15 @@ namespace Application.Mappers
     {
         private readonly ITramiteTipoMapper _tipoMapper;
         private readonly ITramiteEstadoMapper _estadoMapper;
-        public TramiteMapper(ITramiteEstadoMapper estadoMapper, ITramiteTipoMapper tipoMapper)
+        private readonly IUserService _userService;        
+
+        public TramiteMapper(ITramiteTipoMapper tipoMapper, ITramiteEstadoMapper estadoMapper, IUserService userService)
         {
-            _estadoMapper = estadoMapper;
             _tipoMapper = tipoMapper;
+            _estadoMapper = estadoMapper;
+            _userService = userService;
         }
+
         public Task<TramiteByMonthResponse> TramiteByMonthResponse(List<CabeceraTramiteDto> tramites)
         {
             int aprobado = 0;
@@ -55,7 +60,9 @@ namespace Application.Mappers
                     {
                         Id = tramite.Id,
                         UsuarioId = tramite.UsuarioId,
+                        UsuarioReceptor = await _userService.GetUserByIdAsync(tramite.UsuarioId),
                         UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
+                        UsuarioRemitente = await _userService.GetUserByIdAsync(tramite.UsuarioSolicitanteId),
                         FechaFinal = tramite.FechaFinal,
                         FechaInicio = tramite.FechaInicio,                                                
                         EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),
@@ -69,7 +76,9 @@ namespace Application.Mappers
                     {
                         Id = tramite.Id,
                         UsuarioId = tramite.UsuarioId,
+                        UsuarioReceptor = await _userService.GetUserByIdAsync(tramite.UsuarioId),
                         UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
+                        UsuarioRemitente = await _userService.GetUserByIdAsync(tramite.UsuarioSolicitanteId),
                         FechaFinal = tramite.FechaFinal,
                         FechaInicio = tramite.FechaInicio,                                                
                         EstadoResponse = await _estadoMapper.TramiteEstadoResponse(tramite.Estado),
@@ -88,7 +97,9 @@ namespace Application.Mappers
                 {
                     Id = tramite.Id,
                     UsuarioId = tramite.UsuarioId,
+                    UsuarioReceptor = await _userService.GetUserByIdAsync(tramite.UsuarioId),
                     UsuarioSolicitanteId = tramite.UsuarioSolicitanteId,
+                    UsuarioRemitente = await _userService.GetUserByIdAsync(tramite.UsuarioSolicitanteId),
                     FechaFinal = tramite.FechaFinal,
                     FechaInicio = tramite.FechaInicio,
 

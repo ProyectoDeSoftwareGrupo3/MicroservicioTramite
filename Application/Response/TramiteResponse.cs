@@ -6,7 +6,9 @@ namespace Application.Response
     {
         public int Id { get; set; }
         public Guid UsuarioId { get; set; }
+        public GetUserResponse UsuarioReceptor { get; set; }    
         public Guid UsuarioSolicitanteId { get; set; }
+        public GetUserResponse UsuarioRemitente { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }        
         public GetAllTramiteEstadoResponse EstadoResponse { get; set; }

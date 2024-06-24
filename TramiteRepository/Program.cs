@@ -80,6 +80,12 @@ builder.Services.AddHttpClient<AnimalApiClient>(client =>
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 
+builder.Services.AddHttpClient<UserApiClient>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7052/"); // URL base de la API externa
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
+
 
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<TramiteDbContext>(options => options.UseSqlServer(connectionString));
@@ -102,6 +108,7 @@ builder.Services.AddScoped<ITramiteEstadoMapper, TramiteEstadoMapper>();
 builder.Services.AddScoped<ITramiteMapper, TramiteMapper>();
 
 builder.Services.AddScoped<IAnimalService, AnimalService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddScoped<IEmailService, EmailService>();
 
