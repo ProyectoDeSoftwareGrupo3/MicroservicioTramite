@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(TramiteDbContext))]
-    [Migration("20240620225637_TramitesActualizados")]
-    partial class TramitesActualizados
+    [Migration("20240624185917_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,8 +61,8 @@ namespace Infrastructure.Migrations
                             EstadoId = 2,
                             FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("05149f5a-8daf-40f9-b642-8dac91e9bbb2"),
-                            UsuarioSolicitanteId = new Guid("0bd8705b-ca38-437a-af57-3c0cb7802ab5")
+                            UsuarioId = new Guid("aaef2c4f-ded7-4b1a-add3-9a3448b9e9e0"),
+                            UsuarioSolicitanteId = new Guid("19bb7f59-3372-433f-b343-00e75953d3a3")
                         },
                         new
                         {
@@ -70,35 +70,26 @@ namespace Infrastructure.Migrations
                             EstadoId = 2,
                             FechaFinal = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("780e2b59-0a38-4fcc-aeb7-5aee51604ac5"),
-                            UsuarioSolicitanteId = new Guid("b6ee3139-9015-447e-8673-8ce6168b8218")
+                            UsuarioId = new Guid("aaef2c4f-ded7-4b1a-add3-9a3448b9e9e0"),
+                            UsuarioSolicitanteId = new Guid("19bb7f59-3372-433f-b343-00e75953d3a3")
                         },
                         new
                         {
                             Id = 3,
-                            EstadoId = 1,
+                            EstadoId = 2,
                             FechaFinal = new DateTime(2024, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("afbd7f4f-c607-456d-9f87-e2c083fb4130"),
-                            UsuarioSolicitanteId = new Guid("a9a80928-5bbd-49af-b8aa-12e777a8212d")
+                            UsuarioId = new Guid("aaef2c4f-ded7-4b1a-add3-9a3448b9e9e0"),
+                            UsuarioSolicitanteId = new Guid("19bb7f59-3372-433f-b343-00e75953d3a3")
                         },
                         new
                         {
                             Id = 4,
-                            EstadoId = 1,
+                            EstadoId = 2,
                             FechaFinal = new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("cb863fe3-d02d-4cbe-b940-1dd37d689e66"),
-                            UsuarioSolicitanteId = new Guid("d64afc53-2902-47be-b42f-29fa4dd79d7a")
-                        },
-                        new
-                        {
-                            Id = 5,
-                            EstadoId = 3,
-                            FechaFinal = new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FechaInicio = new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = new Guid("947a3ea7-38b8-4bc8-b80c-122f668a7970"),
-                            UsuarioSolicitanteId = new Guid("0f30b64e-7354-45c1-bb31-395b4945f0d3")
+                            UsuarioId = new Guid("aaef2c4f-ded7-4b1a-add3-9a3448b9e9e0"),
+                            UsuarioSolicitanteId = new Guid("19bb7f59-3372-433f-b343-00e75953d3a3")
                         });
                 });
 

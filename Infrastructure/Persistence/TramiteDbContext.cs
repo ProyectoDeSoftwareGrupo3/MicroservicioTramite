@@ -262,16 +262,16 @@ namespace Infrastructure.Persistence
                 new CabeceraTramite
                 {
                     Id = 1,
-                    UsuarioId = Guid.NewGuid(),
-                    UsuarioSolicitanteId = Guid.NewGuid(),
+                    UsuarioId = new Guid("AAEF2C4F-DED7-4B1A-ADD3-9A3448B9E9E0"),
+                    UsuarioSolicitanteId = new Guid("19BB7F59-3372-433F-B343-00E75953D3A3"),
                     FechaInicio = new DateTime(2024, 3, 12),
                     EstadoId = 2,                    
                 },
                 new CabeceraTramite
                 {
                     Id = 2,
-                    UsuarioId = Guid.NewGuid(),
-                    UsuarioSolicitanteId = Guid.NewGuid(),
+                    UsuarioId = new Guid("AAEF2C4F-DED7-4B1A-ADD3-9A3448B9E9E0"),
+                    UsuarioSolicitanteId = new Guid("19BB7F59-3372-433F-B343-00E75953D3A3"),
                     FechaInicio = new DateTime(2024, 4, 12),
                     EstadoId = 2,                    
 
@@ -280,31 +280,22 @@ namespace Infrastructure.Persistence
                 new CabeceraTramite
                 {
                     Id = 3,
-                    UsuarioId = Guid.NewGuid(),
-                    UsuarioSolicitanteId = Guid.NewGuid(),
+                    UsuarioId = new Guid("AAEF2C4F-DED7-4B1A-ADD3-9A3448B9E9E0"),
+                    UsuarioSolicitanteId = new Guid("19BB7F59-3372-433F-B343-00E75953D3A3"),
                     FechaInicio = new DateTime(2024, 5, 12),
                     FechaFinal = new DateTime(2024, 5, 13),
-                    EstadoId = 1,                    
+                    EstadoId = 2,                    
 
 
                 },
                 new CabeceraTramite
                 {
                     Id = 4,
-                    UsuarioId = Guid.NewGuid(),
-                    UsuarioSolicitanteId = Guid.NewGuid(),
+                    UsuarioId = new Guid("AAEF2C4F-DED7-4B1A-ADD3-9A3448B9E9E0"),
+                    UsuarioSolicitanteId = new Guid("19BB7F59-3372-433F-B343-00E75953D3A3"),
                     FechaInicio = new DateTime(2024, 6, 12),
                     FechaFinal = new DateTime(2024, 6, 13),
-                    EstadoId = 1,                   
-                },
-                new CabeceraTramite
-                {
-                    Id = 5,
-                    UsuarioId = Guid.NewGuid(),
-                    UsuarioSolicitanteId = Guid.NewGuid(),
-                    FechaInicio = new DateTime(2024, 6, 12),
-                    FechaFinal = new DateTime(2024, 6, 13),
-                    EstadoId = 3,                    
+                    EstadoId = 2,                   
                 }
                 );
 

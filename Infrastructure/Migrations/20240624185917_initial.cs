@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class TramitesActualizados : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -130,11 +130,10 @@ namespace Infrastructure.Migrations
                 columns: new[] { "Id", "EstadoId", "FechaFinal", "FechaInicio", "UsuarioId", "UsuarioSolicitanteId" },
                 values: new object[,]
                 {
-                    { 1, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("05149f5a-8daf-40f9-b642-8dac91e9bbb2"), new Guid("0bd8705b-ca38-437a-af57-3c0cb7802ab5") },
-                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("780e2b59-0a38-4fcc-aeb7-5aee51604ac5"), new Guid("b6ee3139-9015-447e-8673-8ce6168b8218") },
-                    { 3, 1, new DateTime(2024, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("afbd7f4f-c607-456d-9f87-e2c083fb4130"), new Guid("a9a80928-5bbd-49af-b8aa-12e777a8212d") },
-                    { 4, 1, new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("cb863fe3-d02d-4cbe-b940-1dd37d689e66"), new Guid("d64afc53-2902-47be-b42f-29fa4dd79d7a") },
-                    { 5, 3, new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("947a3ea7-38b8-4bc8-b80c-122f668a7970"), new Guid("0f30b64e-7354-45c1-bb31-395b4945f0d3") }
+                    { 1, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("aaef2c4f-ded7-4b1a-add3-9a3448b9e9e0"), new Guid("19bb7f59-3372-433f-b343-00e75953d3a3") },
+                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("aaef2c4f-ded7-4b1a-add3-9a3448b9e9e0"), new Guid("19bb7f59-3372-433f-b343-00e75953d3a3") },
+                    { 3, 2, new DateTime(2024, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("aaef2c4f-ded7-4b1a-add3-9a3448b9e9e0"), new Guid("19bb7f59-3372-433f-b343-00e75953d3a3") },
+                    { 4, 2, new DateTime(2024, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("aaef2c4f-ded7-4b1a-add3-9a3448b9e9e0"), new Guid("19bb7f59-3372-433f-b343-00e75953d3a3") }
                 });
 
             migrationBuilder.InsertData(
