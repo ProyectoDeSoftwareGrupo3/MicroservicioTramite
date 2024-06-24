@@ -2,6 +2,6 @@
 {
     public class GetAnimalTipoResponse
     {
-        public string url { get; set; }
+        public string Descripcion { get; set; }
     }
 }

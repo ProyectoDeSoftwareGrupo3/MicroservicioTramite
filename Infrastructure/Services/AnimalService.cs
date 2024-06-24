@@ -12,4 +12,5 @@ public class AnimalService(AnimalApiClient animalApiClient) : IAnimalService
     {
         return await _animalApiClient.GetAnimalByIdAsync(id);
     }
+    
 }

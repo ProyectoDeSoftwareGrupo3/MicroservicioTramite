@@ -16,5 +16,5 @@ public class AnimalApiClient(HttpClient httpClient)
         var result = JsonSerializer.Deserialize<GetAnimalResponse>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
         return result;
-    }
+    }   
 }
