@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using Application.Exceptions;
+using Application.Interfaces.IEmail;
 using Application.Interfaces.IMappers;
 using Application.Interfaces.ITramite;
 using Application.Interfaces.ITramiteEstado;
@@ -8,6 +9,7 @@ using Application.Request;
 using Application.Response;
 using Domain.Dtos;
 using Domain.Entities;
+using Domain.Models;
 
 namespace Application.UseCases
 {
@@ -18,13 +20,18 @@ namespace Application.UseCases
         private readonly ITramiteEstadoService _estadoservice;
         private readonly ITramiteMapper _mapper;
         private readonly IAnimalService _animalService;
-        public TramiteService(ITramiteCommand command, ITramiteQuery query, ITramiteMapper mapper, ITramiteEstadoService estadoService, IAnimalService animalService)
+        private readonly IUserService _userService;
+        private readonly IEmailService _emailService;
+
+        public TramiteService(ITramiteCommand command, ITramiteQuery query, ITramiteEstadoService estadoservice, ITramiteMapper mapper, IAnimalService animalService, IUserService userService, IEmailService emailService)
         {
             _command = command;
             _query = query;
+            _estadoservice = estadoservice;
             _mapper = mapper;
-            _estadoservice = estadoService;
             _animalService = animalService;
+            _userService = userService;
+            _emailService = emailService;
         }
 
         public async Task<TramiteResponse> DeleteTramite(int Id)
@@ -256,12 +263,29 @@ namespace Application.UseCases
                     throw new ExceptionNotFound("No existe ese tramite");
                 }
                 var tramiteUpdated = await _command.UpdateTramiteEstado(request);
+                NotifyUser(tramiteUpdated);
                 return await _mapper.UpdateTramiteResponse(tramiteUpdated);
             }
             catch (ExceptionNotFound e)
             {
                 throw new ExceptionNotFound(e.Message);
             }
+        }
+        private async void NotifyUser(CabeceraTramite tramite)
+        {
+            string message;
+            GetUserResponse remitente = await _userService.GetUserByIdAsync(tramite.UsuarioId);
+            GetUserResponse receptor = await _userService.GetUserByIdAsync(tramite.UsuarioSolicitanteId);
+            if(tramite.EstadoId == 1)
+            {
+                message = "ACEPTADA: Su solicitud ha sido aceptada, puede ponerse en contacto con la entidad adoptante a traves de este mail: " + remitente.Email;
+            }
+            else
+            {
+                message = "RECHAZA: Su solicitud ha sido rechazada";
+            }
+            await _emailService.SendEmailAsync(receptor.Email, "Estado de la solicitud", message);
+
         }
 
         public async Task<TramiteByMonthResponse> GetTramiteByMonth(DateTime dateTime)
