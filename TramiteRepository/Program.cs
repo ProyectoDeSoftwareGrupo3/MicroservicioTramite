@@ -82,7 +82,7 @@ builder.Services.AddHttpClient<AnimalApiClient>(client =>
 
 builder.Services.AddHttpClient<UserApiClient>(client =>
 {
-    client.BaseAddress = new Uri("https://localhost:44350/"); // URL base de la API externa
+    client.BaseAddress = new Uri("https://localhost:7054/"); // URL base de la API externa
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 
